@@ -1,0 +1,4 @@
+﻿  Ex2.c
+D:\ISEC\SO2\Práticas\Ficha1\Ex2\Ex2.c(9,12): warning C4477: 'printf': a cadeia de formato '%d' requer um argumento do tipo 'int', mas um argumento variadic 2 tem o tipo 'size_t'
+D:\ISEC\SO2\Práticas\Ficha1\Ex2\Ex2.c(9,12): message : considere usar '%zd' na cadeia de formato
+  Ex2.vcxproj -> D:\ISEC\SO2\Práticas\Ficha1\x64\Debug\Ex2.exe

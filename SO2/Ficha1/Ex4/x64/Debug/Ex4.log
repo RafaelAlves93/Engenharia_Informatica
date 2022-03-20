@@ -1,0 +1,2 @@
+﻿  Ex4.c
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.31.31103\include\yvals_core.h(23,1): fatal error C1189: #error:  STL1003: Unexpected compiler, expected C++ compiler.

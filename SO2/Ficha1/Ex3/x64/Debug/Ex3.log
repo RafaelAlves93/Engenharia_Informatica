@@ -1,0 +1,4 @@
+﻿  Ex3.c
+D:\ISEC\SO2\Práticas\Ficha1\Ex3\Ex3.c(30,34): warning C4477: 'swprintf_s': a cadeia de formato '%d' requer um argumento do tipo 'int', mas um argumento variadic 2 tem o tipo 'size_t'
+D:\ISEC\SO2\Práticas\Ficha1\Ex3\Ex3.c(30,34): message : considere usar '%zd' na cadeia de formato
+  Ex3.vcxproj -> D:\ISEC\SO2\Práticas\Ficha1\x64\Debug\Ex3.exe
