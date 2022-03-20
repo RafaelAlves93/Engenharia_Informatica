@@ -1,0 +1,73 @@
+1. -
+2. -
+3.
+    a)
+        i)    man cp, man mv, man rm
+        ii)    man X printf, onde o X e o numero da pagina onde as funcoes C estao situadas na instalacao do man
+    b)
+        i)    passwd
+        ii)    passwd
+    c)
+        i)    ls
+        ii)    ls -l
+        iii)    ls /tmp -r
+    d)
+        i)    cd /tmp
+        ii)    pwd
+        iii)    cd ~
+        iv)    ls /bin
+        v)    mkdir aula && cd ./aula
+        vi)    mkdir a && mkdir a/b
+        vii)    rm -rf a
+    e)
+        i)    echo "ola"
+        ii)    touch ident
+            a)    nano ident
+            b)    echo -e "kylix afonso\n2020146228" > ident
+        iii)    cat ident
+    f)
+        i)    cp ident dois
+        ii)    mv dois tres; deixou de existir, agora so existe o tres.
+        iii)    rm tres
+        iv)    rm -r aula
+        v)    echo $(ls ~) > lista
+        vi)    wc lista; wc $(ls)
+        vii)
+            a) ls /bin | more
+            b) ls /bin | sort
+            c) ls /bin | grep "dir"
+    g)
+        i)    cat $(whereis mkdir) / cat $(whereis ls)
+        ii)    whereis cd
+    h)
+        i)    sudo pacman-mirrors
+        ii)    sudo pacman -S Syyu
+        iii)    sudo pacman -S libncurses5
+    i)
+        i)    ls -l ident
+        ii)    ./ident; porque o utilizador nao tem permissao para executar o ./ident
+        iii)    chmod +x ident 
+        iv)    ./ident
+        v)    chmod -rw ident; cat ident
+        vi)    sudo cat ident
+        vii)    chown man man
+        viii)    chown kylix man
+        ix)    cat /etc/passwd
+        x)    sudo cat /etc/shadow; sudo, porque /etc/shadow e um ficheiro priveligiado
+        xi)    sudo su - man; sudo su
+4)
+    a)    who | wc
+    b)    who | uniq
+    c)    who | grep "kylix" | wc
+    d)    ls /tmp | wc
+    e)    file /bin/* | grep "executable" | wc
+    f)    df /dev
+    g)    ls -l /etc | grep "\-rw\-r\-\-\-\-\-" | wc
+    h)    echo -e "exemplo\netc" > ficheiro
+    i)    echo $(ls ~/.p*) > /tmp/lista
+    j)    du -a /bin/* | sort -n -r | head -n 7
+5)
+    iv)    echo $PATH
+    v)    TESTE=aula123
+    vi)    echo $TESTE
+    vii)    nao aparece. para aparecer seria preciso usar o export.

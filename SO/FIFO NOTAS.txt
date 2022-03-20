@@ -1,0 +1,302 @@
+FIFO -> ficheiro do sistema (com propriedades singulares). Tem sincronismo
+
+Como criamos o FIFO: 
+	1) na linha de comandos: # mkfifo teste 
+	2) verificar se existe: ls -l (no FIFO vai aparecer a letra "P", é o que o identifica)
+	3) vamos abrir o FIFO para leitura: # cat teste
+
+		PERMISSOES:
+		O_RDONLY 	(BLOQUEANTE)
+		O_WRONLY 	(BLOQUEANTE)
+		O_RDONLY | O_NONBLOCK
+		O_WRONLY | O_NONBLOCK
+		O_RORW ?
+		
+		QUEM RECEBE:
+		READ
+		QUEM ENVIA:
+		WRITE
+	4) vamos abrir o FIFO para escrita
+	5) para apagar: estar na diretoria: rm teste
+
+
+
+
+FICHA5EX1
+
+RECEBE.C
+#include <fcntl.h>
+#include <sys/types.h>
+#include <sdtio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <errno.h>
+#include <sys/stat.h>
+#include <sys/wait.h> ?
+
+#define SERVER_FIFO "teste"
+
+typedef struct{
+	pid_t pid;
+	char mensagem[100];
+} dataMSG;
+
+int main(){
+	//char res[100]; --> SEM A ESTRUTURA DE DADOS!
+	dataMSG res;
+	if(mkfifo(SERVER_FIFO,0666)== -1){
+		if(errno == EEXIST){
+		pintf("fifo ja existe");
+		}
+	printf("Erro abrir o fifo");
+	return 1;
+	}
+	int fde = open(SERVER_FIFO,O_RDONLY);
+	if (fde == -1){
+	printf("erro abrir o servidor");
+	return 1;}
+
+	int size = read (fde, &res, sizeof(res));
+	if (size > 0)
+		printf("Mensagem - [%s] PID do cliente [%d]",res,mensagem,pid);
+	close(fdr);
+	
+	unlink(SERVER_FIFO); --> apagar o FIFO
+}
+
+
+
+ENVIA.C
+#include <fcntl.h>
+#include <sys/types.h>
+#include <sdtio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <errno.h>
+#include <sys/stat.h>
+#include <sys/wait.h> ?
+
+#define SERVER_FIFO "teste"
+
+typedef struct{
+	pid_t pid;
+	char mensagem[100];
+} dataMSG;	
+
+
+int main(){
+	//char res[100]; -->SEM A ESTRUTURA DE DADOS!
+	dataMSG res;
+	strcpy(res,"doi a cabeca");
+
+	int fde = open(SERVER_FIFO,O_WRDONLY);
+	if (fde == -1){
+	printf("erro abrir o servidor");
+	return 1;}
+
+	int size = write (fde,&res,sizeof(res));
+	close(fde);
+}
+
+
+
+
+FICHA5EX3
+
+CLIENTE.C
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <fcntl.h>
+#include <sys/type.h>
+#include <unistd.h>
+#include <sys/stat.h>
+#include <signal.h>
+#include <errno.h>
+
+#define SERVER_FIFO "SERVIDOR"
+#define CLIENT_FIFO "CLIENTE%d" //CLIENTE123
+
+char CLIENTE_FIFO_FINAL[100]; //CLIENTE123
+
+//mensagem que recebe
+//sprintf("CLIENT_FIFO_FINAL,CLIENT_FIFO,mensagemRecebida.pid);
+
+typedef struct {
+	pid_t pid;
+	char operador;
+	int num1;
+	int num2;
+} dataMSG;
+
+//mensagem com a resposta
+typedef struct{
+	float res;
+} dataRPL;
+
+int main(){
+	dataMSG mensagem;
+	dataRPL resposta;
+	mensagem.pid = getpid();
+	int fd_envio,fd_resposta;
+	sprintf(CLIENT_FIFO_FINAL,CLIENT_FIFO,getpid());
+	if(mkfifo(CLIENT_FIFO_FINAL,0666)== -1){
+		if(errno == EEXIST){
+		pintf("fifo ja existe");
+		}
+	printf("Erro abrir o fifo");
+	return 1;
+	}
+	int fde = open(SERVER_FIFO,O_RDONLY);
+	if (fde == -1){
+	printf("erro abrir o servidor");
+	return -1;
+	}
+	do{
+	printf("Introduza o operador\n");
+	fflush(stdin);
+	scanf(" %c",&mensagem.operador);
+	if(mensagem.operador == '.'){ //SE FOR .
+		fd_envio = open(SERVER_FIFO,O_WRONLY);
+		int size = write(fd_envio,&mensagem,sizeof(mensagem));
+		close(fd_envio);
+		unlink(CLIENT_FIFO_FINAL);
+		exit(1);
+	}else{
+		print("Introduza o numero 1\n");
+		scanf("%d",&mensagem.num1);
+		print("Introduza o numero 2\n");
+		scanf("%d",&mensagem.num2);
+	}
+	fd_envio = open(SERVER_FIFO,O_WRONLY);
+	int size = write(fd_envio,&mensagem,sizeof(mensagem));
+	close(fd_envio);
+	//RECEBER O CALCULO
+	fd_resposta = open(CLIENT_FIFO_FINAL,O_RDONLY);
+	int size2 = read(fd_resposta,&resposta,sizeof(resposta));
+	close(fd_resposta);
+	printf("\nResultado do calculo - [%f]\n",resposta.res);
+	}while(1);
+}
+
+
+
+
+SERVIDOR.C
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <fcntl.h>
+#include <sys/type.h>
+#include <unistd.h>
+#include <sys/stat.h>
+#include <signal.h>
+#include <errno.h>
+
+#define SERVER_FIFO "SERVIDOR"
+#define CLIENT_FIFO "CLIENTE%d" //CLIENTE123
+
+char CLIENTE_FIFO_FINAL[100]; //CLIENTE123
+
+//mensagem que recebe
+//sprintf("CLIENT_FIFO_FINAL,CLIENT_FIFO,mensagemRecebida.pid);
+
+typedef struct {
+	pid_t pid;
+	char operador;
+	int num1;
+	int num2;
+} dataMSG;
+
+//mensagem com a resposta
+typedef struct{
+	float res;
+} dataRPL;
+
+void handler_sigalrm(int s, siginfo_t *i, void *v){
+	unlink(SERVER_FIFO);
+	printf("\nAdeus\n");
+	exit(1);
+}
+
+int main(){
+	struct sigaction sa;
+		sa.sa_sigaction=handler_sigalrm;
+		sa.sa_flags = SA_RESTART | SA_SIGINFO; //NAO E NECESSARIO
+	sigaction(SIGINT,&sa,NULL);
+	dataMSG mensagemRecebida;
+	dataRPL resposta;
+	if(mkfifo(SERVER_FIFO,0666)== -1){
+		if(errno == EEXIST){
+		pintf("fifo ja existe");
+		}
+	printf("Erro abrir o fifo");
+	return 1;
+	}
+	int fde = open(SERVER_FIFO,O_RDONLY);
+	if (fde == -1){
+	printf("erro abrir o servidor");
+	return -1;
+	}
+	int fdRecebe = open(SERVER_FIFO,O_RDONLY);
+	if(fdRecebe==-1){
+		pintf("Erro");
+		return -1;
+	}
+	do{
+	int size = read(fdRecebe,&mensagemRecebida,sizeof(mensagemRecebida));
+	if(size>0){
+		if(mensagemRecebida.operador == '+')
+		resposta.res = mensagemRecebida.num1 + mensagemRecebida.num2;
+		else if(mensagemRecebida.operador == '.')
+		kill(getpid(),SIGINT);
+		//responder ao meu cliente...
+		sprintf(CLIENTE_FIFO_FINAL,CLIENT_FIFO,mensagemRecebida.pid);
+		int fdEnvio= open(CLIENTE_FIFO_FINAL,0_WRONLY);
+		int size2 = write (fdEnvio,&resposta,sizeof(resposta));
+		close(fdEnvio);
+	}
+	}while(1);
+	unlink (SERVER_FIFO);
+}
+
+
+
+
+
+d) FAZER EM CASA
+e)
+f)
+
+
+
+
+
+
+
+
+
+
+
+PROTOTIPOS
+--------------------------------------
+RECEBE.C
+...
+MKFIFO("TESTE",0666);
+FDR=open("teste",0_RDONLY);
+int size=read(FDR, &res, sizeof(FDR);
+close(FDR) --> FDR descritor
+unlink("teste");
+---------------------------------------
+
+---------------------------------------
+ENVIA.C
+...
+open("teste", O_WRONLY);
+int size = write(FDR,&msg
+
+
+---------------------------------------
+
