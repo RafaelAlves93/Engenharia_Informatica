@@ -1,0 +1,43 @@
+hkey chave;
+//objetivos:
+//1- abrir uma chave do res...
+//2- criar uma chave, quando nao existe (automaticamente depois)
+
+RegCreateKeyEx( HKEY_CURRENT_USER,
+				caminhoCompletoComChave, software/aula/xpto
+				0,
+				NULL,
+				REG_OPTION_VOLATILE,
+				KEY_ALL_ACCESS,
+				NULL,
+				&chave //do tipo hkey
+				&resposta) //do tipo dword
+
+
+//resposta -> REG_OPENED_EXISTING_KEY / REG_CREATED_NEW_KEY
+return da função regcreatekeyex é ERROR_SUCCESS!!!
+
+
+RegOpenKeyEx(HKEY_CURRENT_USER
+				caminhoCompletoComChave, 0,
+				KEY_ALL_ACCESS, &chave) != ERROR_SUCCESS)
+				
+				
+RegSetValueEx(chave, nome,
+				0,
+				REG_SZ,
+				(LPBYTE) val,
+				(DWORD) (_tcslen(val) + 1) * sizeof(TCHAR));
+				
+				
+RegQueryValueEx(chave, nome,
+				NULL, NULL, (LPBYTE)val,
+				&sizeVal);
+				
+				
+RegDeleteTree(chave, caminho);
+
+
+RegCloseKey(chave);
+				
+				
