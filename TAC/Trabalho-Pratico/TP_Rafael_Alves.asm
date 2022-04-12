@@ -1,7 +1,6 @@
 ; TRABALHO PRATICO - CODIGO XXXX
-; Aluno 1:
-; Aluno 2:
-; Aluno 3:
+; Aluno 1: Rafael Alves
+; Aluno 2: Abílio Costa
 
 .8086
 .model small
