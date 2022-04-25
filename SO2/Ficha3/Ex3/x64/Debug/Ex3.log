@@ -1,0 +1,3 @@
+﻿main.obj : error LNK2019: símbolo externo não resolvido, __imp_applyFactor, referenciado na função wmain
+main.obj : error LNK2019: símbolo externo não resolvido, __imp_factor, referenciado na função wmain
+D:\ISEC\SO2\Práticas\Ficha3\x64\Debug\Ex3.exe : fatal error LNK1120: 2 externo não resolvidos
