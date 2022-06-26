@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Centro de Saúde Condeixa </title>
+
+    <!-- Ligações CSS -->
+    <link href="trabalhotweb.css" rel="stylesheet" type="text/css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Fim Ligações CSS -->
+</head>
+
+<body onload="onload()">
+ 
+<!-- Container Geral -->
+<div class="containergeral">
+  
+<!-- Menu Navegação -->
+<div class="topnav" id="myTopnav">
+ 
+    <a href="inicio.html">Início</a>
+   
+        <div class="dropdown">
+            <button class="dropbtn" id="active">Quem Somos
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <!-- SUBMENUS -->
+            <div class="dropdown-content">
+                <a href="equipa.html">Equipa</a>
+                <a href="contactos.html" class="active">Contactos</a>
+            </div>
+            <!-- FimSUBMENUS -->
+        </div>
+      
+        <div class="dropdown">
+            <button class="dropbtn">O que fazemos
+                <i class="fa fa-caret-down"></i>
+               
+            </button>
+            <!-- SUBMENUS -->
+            <div class="dropdown-content">
+                <a href="oquefazemos.html">Actividades da USF</a>
+                <a href="consultas.html">Consultas</a>
+            </div>
+            <!-- FimSUBMENUS -->
+        </div>
+    
+    <a href="indicadores.html">Indicadores</a>
+    <a href="entrar.html">Login</a>
+</div>
+<!-- Fim Menu Navegação -->
+   
+    
+    
+<!-- Formulário Container -->
+<div class="containerform2">
+    
+    <!-- Texto Contactos -->
+    <div class="textocontactos">
+    <h2>Contactos</h2> 
+    <p>Aqui pode encontrar como chegar à USF ou simplesmente deixar-nos uma mensagem.</p>
+    </div>
+    <!-- Fim Texto Contactos -->
+ 
+    <!-- Formulário -->
+    <div class="formulario2">
+        
+        <!-- Coluna Lado Esquerdo -->
+        <div class="colunas">
+            
+            <p><b>USF Condeixa-a-Nova</b></p>
+            <p><b>Unidade de Saúde Familiar de Condeixa-a-Nova</b></p>
+            <br>
+            
+            <p>Horário de Funcionamento</p>
+            <p>De 2ª a 6ª feira: 08:00 às 20:00</p>
+            <p>Sábados, domingos e feriados: 10:00 às 18:00 </p>
+            <br>
+        
+            <p>Telefone: 239 940 170</p>
+            <p>Email: usf.condeixa@arscentro.min-saude.pt</p>
+            <br>
+            
+            <p>Rua D. Ana Laboreiro D Eça</p>
+            <p>3150-195 Condeixa-a-Nova</p>
+            
+            
+            <div class="googlemaps">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2805.079633969611!2d-8.497481784804911!3d40.110685679401904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd22588f8a947505%3A0xa0039571639a9620!2sCentro%20de%20Sa%C3%BAde%20Condeixa-a-Nova%2C%203150-195%20Condeixa-a-Nova!5e1!3m2!1spt-PT!2spt!4v1610643603090!5m2!1spt-PT!2spt" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            </div>
+            
+        </div>
+        <!-- Fim Coluna Lado Esquerdo -->
+    
+        
+        
+        <!-- Coluna Lado Direito -->
+        <div class="colunas">
+            <form action="" method="post" id="mensagem">
+                <label id="labelprinome" for="primeironome">Primeiro Nome:</label>
+                <input type="text" id="primeironome" class="inputtexto" name="primeironome" placeholder="Primeiro nome" maxlength="30" required="required">
+                <label id="labelultnome" for="ultimonome">Último Nome:</label>
+                <input type="text" id="ultimonome" class="inputtexto" name="ultimonome" placeholder="Último nome..." maxlength="30" required="required">
+                <label id="labelmotivo" for="motivo">Motivo de Contacto:</label>
+                <select id="motivo" class="selecionar" name="motivo">
+                    <option value="informacoes">Pedido de Informações</option>
+                    <option value="questoes">Dúvidas ou Questões</option>
+                    <option value="reclamacoes">Reclamações</option>
+                </select>
+                <label for="assunto">Assunto:</label>
+                <textarea id="assunto" name="assunto" class="areatexto" placeholder="Escreva aqui a sua mensagem" maxlength="400" required="required"></textarea>
+                <input type="submit" class="submeter" value="Submeter" id="btnSubmit">
+            </form>
+        </div>
+        <!-- Fim Coluna Lado Direito -->
+        
+    </div>
+        <!-- Fim Formulário -->
+    
+</div>
+<!-- Fim Formulário Container -->
+    
+
+<!-- Footer-->
+<footer>
+   
+    <!-- Logo no Footer -->
+    <div class="logofooter">
+        <a href="inicio.html" class="active"> <img src="img/usfcondeixa.png"></a>
+    </div>
+    <!-- Fim Logo no Footer -->
+
+    <!--Container Texto Footer -->
+    <div class="containertextofooter"> 
+        
+        <!-- Texto Morada Footer -->
+        <div class="textofooter">
+        <p><b>USF Condeixa-a-Nova</b></p>
+        <p>Rua D. Ana Laboreiro D Eça</p>
+        <p>3150-195 Condeixa-a-Nova</p>
+        </div>
+        <!-- Fim Texto Morada Footer -->
+        
+    </div>
+    <!--Fim Container TextoFooter -->
+    
+    <!-- Redes Sociais -->
+    <div class="redessociais">
+        <ul>
+            <li><a href="https://www.facebook.com/usfcondeixa" target="_blank"><i class="fa fa-facebook"></i></a></li>
+            
+        </ul>
+    </div>
+    <!-- Fim Redes Sociais -->
+    
+</footer>
+<!-- Fim Footer-->
+
+</div> 
+<!-- Fim Container Geral -->
+    
+    
+    
+    <script type="text/javascript" src="formcontactos.js"></script> 
+</body>   
+
+<!-- Javascript para Menu-->
+<script>
+    /* Alterna entre adicionar ou remover a classe "responsive" ao menu de navegação quando o user clica nas barras*/
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+<!-- Fim Javascript para Menu-->
+
+</html>

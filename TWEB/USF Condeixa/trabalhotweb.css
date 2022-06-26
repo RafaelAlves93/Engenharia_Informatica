@@ -1,0 +1,842 @@
+/*BODY-INÍCIO FORMATAÇÃO*/
+/* Formatação do Body*/
+
+* {
+  box-sizing: border-box;/* Para cada elemento, as dimensoes Width e Height incluem o Conteúdo, o Padding e o Border */
+}
+
+body{
+  padding-top: 0px;
+  padding-right: 10px;
+  padding-bottom: auto;
+  padding-left: 10px;
+  margin: auto;
+  font-family: Arial;
+  font-size: 15px;
+  margin-bottom: 100px;
+  background-color: azure;
+  text-align: justify; 
+}
+.containergeral{
+    margin:0 auto; 
+    max-width: 1500px;
+}
+/*BODY-FIM FORMATAÇÃO*/
+
+
+/* Menu de navegação com cor preta */
+.topnav {
+  background-color: #333;
+  overflow: hidden; 
+}
+
+/* LINKS INÍCIO, O QUE FAZEMOS, ENTRAR */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.active {
+  background-color: grey;
+  color: white;
+}
+
+#active{
+  background-color: grey;
+  color: white; 
+}
+
+/* Esconder as barras (só vão aparecer em ecrãs pequenos) */
+.topnav .icon {
+  display: none;
+}
+
+/* Dropdown container - necessário para posicionar o conteúdo dos menus com dropdown */
+.dropdown {
+  float: left;
+  overflow: hidden; /* O resto do conteúdo fica escondido */
+}
+
+/* Menus com Butões de Dropdown com o mesmo estilo que os menus normais */
+.dropdown .dropbtn {
+  font-size: 17px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+/* Submenus de Dropdown escondidos por default */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Estilo dos Submenus de Dropdown */
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Hover dos Menus (escuro)*/
+.topnav a:hover, .dropdown:hover .dropbtn {
+  background-color: #555;
+  color: white;
+}
+
+/* Hover dos Submenus (cinzento) */
+.dropdown-content a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Mostrar os Submenus quando se passa com o rato em cima dos menus com opção de dropwdon */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/*MEDIA QUERIES*/
+/* Quando o ecrã tiver menos do que 600px esconder todos os Menus, excepto o primeiro (Início)*/
+@media screen and (max-width: 700px) {
+  .topnav a:not(:first-child), .dropdown .dropbtn {
+    display: none;
+  }
+    
+/*Mostrar o ícone das barras*/
+    .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+/* É adicionada a classe "responsive" com Javascript quando o user clica no ícone das barras. Assim, em ecrãs pequenos, em vez dos ícones estarem horizontais são mostrados na vertical*/
+
+@media screen and (max-width: 700px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .topnav.responsive .dropdown {float: none;}
+  .topnav.responsive .dropdown-content {position: relative;}
+  .topnav.responsive .dropdown .dropbtn {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+}
+
+/*MENU NAVEGAÇÃO- FIM FORMATAÇÃO*/
+
+/*Footer Formatação Geral*/
+footer{
+    width: 100%;
+    background-color:lightgray;
+    position:fixed;
+    bottom: 0;
+    left:0;
+}
+/*Fim Footer Formatação Geral*/
+
+/*Logo*/
+.logofooter{
+    position:absolute;
+}
+.logofooter img{
+    width:200px;
+    background-color: lightgray;
+    height:100%;  
+    }
+/*Fim Logo*/
+
+/*Texto da Morada no Footer*/
+.containertextofooter{
+    position:absolute;
+    width:210px;
+    margin-left: 220px;
+}
+
+.textofooter{
+    float:left;
+    font-size: 13px;
+    letter-spacing: 1px;
+    line-height: 0px;
+    text-align: left;
+}
+/*Fim Texto da Morada e da chamada no Footer*/
+
+
+
+/*Estilo dos Icones das Redes Sociais no Footer*/
+.redessociais ul {
+    float:right;
+    display:flex;
+}
+
+.redessociais ul li{
+    list-style: none;
+    margin-right: 80px;
+}
+
+.redessociais ul li .fa{ 
+    font-size: 20px;
+    color: blue;
+}
+
+.redessociais ul li .fa:hover{
+    transform: translate(0, -3px);
+}
+/*Fim Estilo dos Icones das Redes Sociais no Footer*/
+
+/*Media Queeries no Footer*/
+@media screen and (max-width: 750px) {
+    
+    .redessociais ul li{
+       margin-right: 20px;
+    }
+    
+    .containertextofooter{
+        margin-left:180px;
+    }
+    
+    .textofooter{
+        display:none;
+    }
+    
+    .logofooter{
+        display:flex;
+        position:absolute;
+        float:left;
+    }
+    
+    .logofooter img{
+         width:170px;
+         background-color: lightgray;
+         height:100%;  
+    }  
+}
+
+@media screen and (max-width: 300px) {
+    .logofooter{
+        display:none;
+    }
+    
+    .containertextofooter{
+        display:none;
+    }
+}
+/*FOOTER-FIM FORMATAÇÃO*/
+
+/* INÍCIO - INÍCIO FORMATAÇÃO */
+/*Imagem de Fundo*/
+.imgfundo img{
+    width:100%;
+    height: auto;
+}
+
+.imgfundo1 img{
+    width: 75%;
+}
+/* INÍCIO - FIM FORMATAÇÃO */
+
+/*EQUIPA- INÍCIO FORMATAÇÃO */
+
+.wrapper{
+    margin-top: 40px;
+}
+
+.wrapper h1{
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/*Fazer com que os parágrafos relativos a cada membro fiquem em linha*/
+.equipa{
+    display:flex;
+    text-align: center;
+    width: auto;
+    justify-content: center;
+    flex-wrap: wrap; /*faz com que seja responsive*/    
+}
+
+.equipa .membro_equipa{
+    background-color: #ADD8E6;
+    margin: 5px;
+    margin-bottom: 50px;
+    width: 300px;
+    padding:20px;
+    line-height: 20px; /*espaço entre as linhas*/
+    position: relative;
+    text-align: center;
+    border-style: solid;
+    border-color: #6666ff;
+    border-radius: 5px;
+}
+
+.equipa .mvv{
+    background-color: #ADD8E6;
+    margin: 5px;
+    margin-bottom: 50px;
+    width: 300px;
+    padding:20px;
+    line-height: 30px; /*espaço entre as linhas*/
+    position: relative;
+    text-align: justify;
+    border-style: solid;
+    border-color: #6666ff;
+    border-radius: 5px;
+}
+
+
+.equipa .ref_centro{
+    background-color: #ADD8E6;
+    margin: 5px;
+    margin-bottom: 50px;
+    width: 300px;
+    padding:20px;
+    line-height: 20px; /*espaço entre as linhas*/
+    position: relative;
+    border-style: solid;
+    border-color: #6666ff;
+    border-radius: 5px;
+    text-align: left;
+}
+
+
+
+
+.equipa .membro_equipa h3{
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.equipa .membro_equipa p.profissao{
+    font-size: 12px;
+    text-transform: uppercase;
+    margin:12px 0;
+}
+
+.equipa .membro_equipa img{
+    width: 180px;
+    height:auto;
+}
+/*EQUIPA- FIM FORMATAÇÃO*/
+
+/*CONTACTOS- INÍCIO FORMATAÇÃO*/
+
+/*Texto inicial dos contactos no centro*/
+.textocontactos{
+    text-align: center;
+}
+
+
+/* Estilo das caixas de texto brancas para inserir dados */
+.inputtexto, .selecionar, .areatexto {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  margin-top: 4px;
+  margin-bottom: 16px;
+}
+
+/* Botão de Submeter */
+.submeter {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 70px;
+}
+
+/*  Hoover do Botão de Submeter */
+.submeter:hover {
+  background-color: #45a049;
+}
+
+/*Estilo do Container : Caixa que contém os dados de contacto*/
+.containerform2{
+  border-radius: 10px;
+  padding: 10px;
+}
+
+/* Criar duas colunas no Container, alinhadas à esquerda*/
+/*Cada coluna ocupa 50% do seu container*/
+/*No entanto, perdeu-se aqui o estilo do container (caixa cinzenta,), que ficou a abrangir apenas o texto central do início*/
+.colunas{
+  float: left;
+  width: 50%;
+  margin-top: 6px;
+  padding: 20px;
+}
+
+
+
+.colunasoquefazemos{
+    float: left;
+    width: 50%;
+    margin-top: 6px;
+    padding: 20px;
+    line-height: 30px; /*espaço entre as linhas*/
+    
+}
+
+
+/*Correção para as colunas ficarem com o estilo do container (cinzento)*/
+/* Limpar os floats depois das colunas */
+.formulario2:after {
+  content: ""; /* Insere conteúdo vazio depois das colunas.Content é usado com pseudo elementos after e before. Podia ser outro texto qualquer dentro do content, mas apenas queremos conteúdo vazio */
+  display: table; /* tb podia ser display flex, etc*/
+  clear: both; /* Limpar os floats depois das colunas */
+}
+
+/*Alinhas estes títulos à esquerda*/
+#labelultnome, #labelmotivo, #labelprinome {
+    display:block;
+}
+
+.googlemaps iframe{
+    width: 80%;
+    height: auto;
+}
+
+/* MEDIA QUERIES/*
+/*- Quando o ecrã tem menos que 600px, as duas colunas e o botão submeter devem ficar no topo uma da outra em vez de lado a lado */
+@media screen and (max-width: 600px) {
+  .colunas, .submeter {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+/*CONTACTOS- FIM FORMATAÇÃO*/
+
+/*O QUE FAZEMOS- INÍCIO FORMATAÇÃO*/
+/* Formatação do texto */
+#oquefazemos{
+    margin-bottom:100px; ;
+}
+
+#oquefazemos h2{
+    text-align: center;
+}
+
+/* Estilo do botão de download */
+.botoesoqfazemos{
+    text-align: center;
+}
+
+.btn {
+  background-color:cadetblue;
+  border: none;
+  color: white;
+  padding: 12px 30px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.btn a{
+    color:white; /*texto de Download a branco*/
+    text-decoration: none;
+    margin:10px;
+}
+
+
+/* Hoover do Botão */
+.btn:hover {
+  background-color: royalblue;
+}
+/*O QUE FAZEMOS- FIM FORMATAÇÃO*/
+
+
+
+/* Formatação do conteudo (container do slideshow) */
+.conteudo {
+  max-width: 500px;
+  position: relative;
+  float: right;
+  padding-right: 25px;
+}
+
+/* Esconder as imagens por default */
+.OsSlides {
+  display: none; }
+
+/* Botões anterior & seguinte */
+.antes, .depois {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0; 
+;}
+
+/* Posicionar o botão seguinte à direita*/
+.depois {
+  right: 25px;
+  border-radius: 3px 0 0 3px; }
+
+/* Durante o hover adicionar um fundo preto com alguma transparência*/
+.antes:hover, .depois:hover{
+    background-color: rgba(0,0,0,0.8)
+}
+
+
+/* Formatar os números que aparecem no Slideshow*/
+.numeros {
+  color: black;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 40px; 
+  background-color: azure;
+}
+
+
+.textoindic{
+    text-align: center;
+}
+.colunas1{
+  float: left;
+  width: 50%;
+  margin-top: 6px;
+  padding: 0px;
+}
+
+.colunas1 h2{
+    text-align: center;
+}
+
+
+
+  
+/* formulario- INÍCIO FORMATAÇÃO */
+.wrapper_formulario{
+    width: 70%;
+    margin:0 auto;
+}
+
+.textoform{
+    text-align: center;
+}
+
+#morada{
+    margin-bottom: 10px;
+}
+
+.formcandidatura{
+    width: 100%;
+    background-color:#EBECF0;
+    padding:20px;
+    border-radius:10px;
+    box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3);
+}
+
+.titulo{
+    font-size: 20px;
+    font-weight:bold;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+#pNome, #uNome, #cartaoc {
+    width: 150px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    letter-spacing: 1px;
+}
+
+#email{
+    width: 350px;
+    padding:8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    letter-spacing: 1px;
+}
+
+#morada{
+    width:100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    letter-spacing: 1px;
+}
+
+#idade{
+    width: 70px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    letter-spacing: 1px;
+}
+
+#uNome1, #email1, #cartaoc1 {
+    float:right;
+}
+
+#pNome{
+    float:left;
+}
+
+#areatexto1{
+  width:100%;
+  margin-bottom:10px;  
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  letter-spacing: 1px;
+}
+
+.coluna-35 {
+    float: left;
+    text-align: right;
+    margin-top: 6px;
+    padding-right: 10px;
+}
+.coluna-65 {
+    float: left;
+    margin-top: 6px;
+}
+
+/* Limpar floats */
+.linha:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+label, #uNome1, #email1, #idade1,#cartaoc1  {
+    padding: 8px 8px 8px 0;
+    letter-spacing: 1px;
+    display: inline-block;
+    font-weight:bold;
+    font-size:small;
+}
+
+.linha{
+    width:100%;
+}
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 1000px) {
+    .cwrapper_candidatura{
+        width: 100%;
+    }
+    
+    #btnSubmeter, #btnReset {
+        margin: 0px;
+        margin-top: 10px;
+        width: 100%;
+        padding: 12px 20px;
+        border-radius:10px;
+    }
+
+    #uNome1, #email1, #cartaoc1 {  float:left; }
+    #uNome1 input, #cartaoc1 input { display:block; }
+    #uNome, #email, #cartaoc {width:100%}
+   
+    .coluna-35, .coluna-65 {
+        width: 100%;
+        text-align: left;
+        margin: 0px 0px;
+    }
+
+    .radio {
+        margin-left:20px;
+    }
+    
+    #morada{
+        height: 50px;
+    }
+}
+    
+    /* MEDIA QUERIES */
+@media screen and (max-width: 500px) {
+    .cwrapper_candidatura{
+        width: 100%;
+    }
+    
+    #btnSubmeter, #btnReset {
+        margin: 0px;
+        margin-top: 10px;
+        width: 100%;
+        padding: 12px 20px;
+        border-radius:10px;
+    }
+
+    #uNome1, #email1, #cartaoc1, #uNome {  float:left; }
+    #uNome1 input, #cartaoc1 input { display:block; }
+    #uNome, #email, #cartaoc, #pNome {width:100%}
+   
+    .coluna-35, .coluna-65 {
+        width: 100%;
+        text-align: left;
+        margin: 0px 0px;
+    }
+
+    .radio {
+        margin-left:20px;
+    }
+
+    #morada{
+        height: 80px;
+    }
+}
+
+
+
+/* LOGIN - INÍCIO FORMATAÇÃO */
+
+#formL { /* Formulário */
+  border: 3px solid #6666ff;
+  border-radius: 5px;
+  width: 50%;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: auto;
+}
+
+#nome, #pw { /* Caixa onde se insere o nome e a pw */
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box; 
+}
+
+#botões { /* Todos os botões são alterados */
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+#buttonL, #botõesC:hover { /* Todos os botões são alterados */
+  opacity: 0.8;
+}
+
+.contem { /* Container com nome, pw, e botões é alterado */
+  padding: 16px; 
+}
+
+
+#emailR, #pwR, #pwRR { /* email e pw no registo são alterados */
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box; 
+}
+
+#botõesL { /* Botões do registo e login são alterados */
+  background-color: #4d4dff;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%; 
+}
+
+#botõesC { /* Botões de cancelar no registo e login é alterado */
+  background-color: #f44336;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%; 
+}
+
+.cancelarbtnR, .registarbtn { /* Botões no registo são alterados */
+  float: left;
+  width: 50%; 
+}
+
+#conteudoR { /* Container com e-mail, pw, e botões é alterado */
+  padding: 16px;
+}
+
+.registo { /* A janela de registo não aparece quando se abre a página */
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding-top: 60px; 
+}
+
+#formR { /* Janela de registo é alterada */
+  background-color: #fefefe;
+  margin: 5% auto 15% auto;
+  border: 3px solid #4d4dff;
+  border-radius: 5px;
+  width: 80%;
+}
+
+.fecho { /* x para fechar a janela de registo */
+  position: absolute;
+  right: 35px;
+  top: 15px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.fecho:hover,
+.fecho:focus { /* x para fechar a janela de registo */
+    color: red;
+    cursor: pointer; 
+}
+
+.contemR::after { /* Ajusta os botões na janela de registo */
+  content: "";
+  clear: both;
+  display: table; 
+}
+
+/* LOGIN - FIM FORMATAÇÃO */
+
+
+

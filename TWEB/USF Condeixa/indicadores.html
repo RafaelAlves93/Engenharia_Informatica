@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Centro de Saúde Condeixa </title>
+
+    <!-- Ligações CSS -->
+    <link href="trabalhotweb.css" rel="stylesheet" type="text/css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Fim Ligações CSS -->
+    
+    
+    
+<!-- Script dados Gerais USF -->    
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', {'packages':['table']});
+      google.charts.setOnLoadCallback(drawTable);
+      function drawTable() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', '');
+        data.addColumn('number', 'ETC');
+        data.addColumn('number', 'Nº Profissionais');
+        data.addRows([
+          ['Médicos', 5.00, 5],
+          ['Enfermeiros', 6.00, 6],
+          ['Secretários Clínicos', 4.00, 4],
+          ['Internos', 5.00, 5]
+        ]);
+
+        var table = new google.visualization.Table(document.getElementById('table_div'));
+
+        table.draw(data, {showRowNumber: true, width: '100%', height: '100%'});
+      }
+    </script>
+    
+    
+    
+<!-- -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['Crianças',     4],
+          ['Adultos 9 aos 44',      8],
+          ['Adultos 45 aos 64',  10],
+          ['Adultos 65 ou mais', 6]
+        ]);
+
+        var options = {
+          title: ''
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+    
+    
+<!-- -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+     <script type="text/javascript">
+               google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawVisualization);
+
+      function drawVisualization() {
+        // Some raw data (not necessarily accurate)
+        var data = google.visualization.arrayToDataTable([
+          ['Month', 'Nº Utentes', 'Nº Utentes por Médico', 'Nº Utentes por Enfermeiro', 'Nº de Consultas de Utente por ano', 'Número de visitas Domiciliárias ', 'Nº de Consultas de Enfermagem'],
+          ['2019/20',  400,      159,         225,            20,          200,      550]
+        ]);
+
+        var options = {
+          title : '',
+          vAxis: {title: 'Quantidade'},
+          hAxis: {title: 'Ano'},
+          seriesType: 'bars',
+          series: {5: {type: 'line'}}
+        };
+
+        var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }S
+         
+    </script>
+    
+    
+</head>
+
+<body onload="onload()">
+
+<!-- Container Geral -->
+<div class="containergeral">
+  
+<!-- Menu Navegação -->
+<div class="topnav" id="myTopnav">
+ 
+    <!-- MENU Inicio -->
+    <a href="inicio.html">Início</a>
+    <!-- Fim MENU Inicio -->
+    
+    <!-- MENU Quem Somos COM SUBMENUS -->
+    <!-- MENU Quem Somos -->
+        <div class="dropdown">
+            <button class="dropbtn">Quem Somos
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <!-- SUBMENUS -->
+            <div class="dropdown-content">
+                <a href="equipa.html">Equipa</a>
+                <a href="contactos.html">Contactos</a>
+                <!--<a href="candidatura.html">Candidatura Espontânea</a>-->
+            </div>
+            <!-- FimSUBMENUS -->
+        </div>
+        <!-- MENU Quem Somos -->
+    <!--Fim Menu Quem Somos COM SUBMENUS -->
+
+    <!-- MENU o que fazemos COM SUBMENUS -->
+    <!-- MENU o que fazemos -->
+        <div class="dropdown">
+            <button class="dropbtn" >O que fazemos
+                <i class="fa fa-caret-down"></i>
+               
+            </button>
+            <!-- SUBMENUS -->
+            <div class="dropdown-content">
+                <a href="oquefazemos.html">Actividades da USF</a>
+                <a href="consultas.html">Consultas</a>
+                <!--<a href="candidatura.html">Candidatura Espontânea</a>-->
+            </div>
+            <!-- FimSUBMENUS -->
+        </div>
+        <!-- MENU o que fazemos -->
+    <!--Fim Menu o que fazemos COM SUBMENUS -->
+    
+    <!-- MENU indicadores -->
+    <a href="indicadores.html" class="active">Indicadores</a>
+    <!-- Fim MENU indicadores -->
+    
+    
+    
+    
+        <!-- MENU Entrar -->
+    <a href="entrar.html">Login</a>
+    <!-- Fim MENU Entrar -->
+    
+    
+</div>
+<!-- Fim Menu Navegação -->
+    
+    
+
+ <!-- Container Titulo + Coluna Lado Esquerdo + Coluna Lado Direito -->
+<div class="containerform2"> 
+    <div class="textoindic">
+    <h1>Dados Gerais da USF Condeixa-a-Nova</h1> 
+        <br>
+    </div>
+    <!-- Container das Colunas -->
+    <div class="formulario2">
+        
+        <!-- Coluna Lado Esquerdo -->
+        <div class="colunas">  
+        <h2>Número de Profissionais da USF</h2>    
+        <div id="table_div"></div>
+            <br><br><br><br>
+            <h2>Vários Indicadores no ano de 2019/2020</h2>
+            <div id="chart_div" style="width: 650px; height: 500px;"></div>
+
+        </div>
+        <!-- FimColuna Lado Esquerdo -->
+    
+
+        <!-- Coluna Lado Direito -->
+        <div class="colunas">
+            <h2>Número médio de consultas por utentes (em %)</h2>  
+            <div id="piechart" style="width: 600px; height: 300px;"></div>
+             <br><br><br><br><br><br><br><br><br>
+            <h2 style="text-align: center">Regulamento Interno USF Condeixa</h2>   
+            <div class="botoesoqfazemos">
+                <!-- Botão de download -->
+                <button class="btn"><i class="fa fa-download"></i><a href="files/regulamento.pdf" target="_blank" download="Oquefazemos">Download</a></button>
+                <!-- Fim Botão de download -->
+            </div>  
+        </div>
+        <!-- Fim Coluna Lado Direito --> 
+        
+    </div>
+    <!-- Fim Container das Colunas -->
+    
+</div>
+ <!-- Fim Container Titulo + Coluna Lado Esquerdo + Coluna Lado Direito -->
+
+
+<!-- Footer-->
+<footer>
+   
+    <!-- Logo no Footer -->
+    <div class="logofooter">
+         <a href="inicio.html" class="active"> <img src="img/usfcondeixa.png"></a>
+    </div>
+    <!-- Fim Logo no Footer -->
+
+    <!--Container Texto e Telefone Footer -->
+    <div class="containertextofooter"> 
+        
+        <!-- Texto Morada Footer -->
+        <div class="textofooter">
+        <p><b>USF Condeixa-a-Nova</b></p>
+        <p>Rua D. Ana Laboreiro D Eça</p>
+        <p>3150-195 Condeixa-a-Nova</p>
+        </div>
+        <!-- Fim Texto Morada Footer -->
+        
+    </div>
+    <!--Fim Container Texto Footer -->
+    
+    <!-- Redes Sociais -->
+    <div class="redessociais">
+        <ul>
+            <li><a href="https://www.facebook.com/usfcondeixa" target="_blank"><i class="fa fa-facebook"></i></a></li>
+            
+        </ul>
+    </div>
+    <!-- Fim Redes Sociais -->
+    
+</footer>
+<!-- Fim Footer-->
+
+</div> 
+<!-- Fim Container Geral -->
+</body>   
+
+    <script>
+    /* Alterna entre adicionar ou remover a classe "responsive" ao menu de navegação quando o user clica nas barras*/
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+    </script>
+
+</html>
