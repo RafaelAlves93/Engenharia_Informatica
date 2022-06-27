@@ -1,11 +1,11 @@
 # ISEC - Engenharia_Informatica
 ## Ramo de Redes e Administração de Sistemas
 #### Cadeiras do Ramo:
-- Segurança
+- [x] Segurança
 - Encaminhamento de Dados
-- Cablagem Estruturada
-- Serviços de Redes 1
-- Serviços de Redes 2
+- [x] Cablagem Estruturada
+- [x] Serviços de Redes 1
+- [x] Serviços de Redes 2
 - Disponibilidade e Desempenho
-- Tecnologias de Ligação
-- Gestão de Redes
+- [x] Tecnologias de Ligação
+- [x] Gestão de Redes
