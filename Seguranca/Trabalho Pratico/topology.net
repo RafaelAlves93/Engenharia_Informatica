@@ -1,0 +1,384 @@
+autostart = False
+version = 0.8.5
+[127.0.0.1:7202]
+    workingdir = C:\Documents and Settings\Cisco\Desktop\Cisco\GNS3\Dynamips
+    udp = 10201
+    [[7200]]
+        image = C:\Documents and Settings\Cisco\Desktop\Cisco\GNS3\Images\uncompressed\c7200-advipservicesk9-mz.151-4.M2.bin
+        ram = 512
+        idlepc = 0x60608040
+        sparsemem = True
+        ghostios = True
+    [[ROUTER ISP]]
+        console = 2104
+        aux = 2503
+        cnfg = configs\ISP.cfg
+        slot0 = C7200-IO-2FE
+        f0/0 = Malorie f0/0
+        f0/1 = WAN f1/1
+        x = -23.0
+        y = -328.0
+        z = 1.0
+        hx = -6.5
+        hy = -23.0
+[127.0.0.1:7203]
+    workingdir = C:\Documents and Settings\Cisco\Desktop\Cisco\GNS3\Dynamips
+    udp = 10301
+    [[7200]]
+        image = C:\Documents and Settings\Cisco\Desktop\Cisco\GNS3\Images\uncompressed\c7200-advipservicesk9-mz.151-4.M2.bin
+        ram = 512
+        idlepc = 0x60608040
+        sparsemem = True
+        ghostios = True
+    [[ROUTER Malorie]]
+        console = 2106
+        aux = 2504
+        cnfg = configs\Malorie.cfg
+        slot0 = C7200-IO-FE
+        f0/0 = ISP f0/0
+        symbol = computer
+        x = 227.0
+        y = -336.0
+        z = 1.0
+[127.0.0.1:7200]
+    workingdir = C:\Documents and Settings\Cisco\Desktop\Cisco\GNS3\Dynamips
+    udp = 10001
+    [[7200]]
+        image = C:\Documents and Settings\Cisco\Desktop\Cisco\GNS3\Images\uncompressed\c7200-advipservicesk9-mz.151-4.M2.bin
+        ram = 512
+        idlepc = 0x60608040
+        sparsemem = True
+        ghostios = True
+    [[ROUTER Docente1]]
+        console = 2101
+        aux = 2501
+        cnfg = configs\Docente1.cfg
+        slot0 = C7200-IO-FE
+        f0/0 = Docentes f0/0
+        symbol = computer
+        x = -875.539105243
+        y = -355.0
+        z = 1.0
+        hx = -67.0
+        hy = 4.0
+[127.0.0.1:7201]
+    workingdir = C:\Documents and Settings\Cisco\Desktop\Cisco\GNS3\Dynamips
+    udp = 10101
+    [[7200]]
+        image = C:\Documents and Settings\Cisco\Desktop\Cisco\GNS3\Images\uncompressed\c7200-advipservicesk9-mz.151-4.M2.bin
+        ram = 512
+        idlepc = 0x60608040
+        sparsemem = True
+        ghostios = True
+    [[ROUTER Docentes]]
+        console = 2102
+        aux = 2502
+        cnfg = configs\Docentes.cfg
+        slot0 = C7200-IO-2FE
+        f0/0 = Docente1 f0/0
+        f0/1 = WAN f0/0
+        slot1 = PA-FE-TX
+        x = -646.568542494
+        y = -351.242640687
+        z = 1.0
+        hx = -3.28679656442
+        hy = -55.9411254969
+[127.0.0.1:7206]
+    workingdir = C:\Documents and Settings\Cisco\Desktop\Cisco\GNS3\Dynamips
+    udp = 10601
+    [[7200]]
+        image = C:\Documents and Settings\Cisco\Desktop\Cisco\GNS3\Images\uncompressed\c7200-advipservicesk9-mz.151-4.M2.bin
+        ram = 512
+        idlepc = 0x60608040
+        sparsemem = True
+        ghostios = True
+    [[ROUTER DNS]]
+        console = 2110
+        aux = 2507
+        cnfg = configs\DNS.cfg
+        slot0 = C7200-IO-FE
+        f0/0 = SW3 2
+        symbol = computer
+        x = -29.1593795665
+        y = 8.09545442945
+        z = 1.0
+        hx = 47.5
+        hy = -21.0
+    [[ETHSW SW3]]
+        1 = access 1 Core-Servicos f0/1
+        2 = access 1 DNS f0/0
+        3 = access 1 http f0/0
+        4 = access 1 ssh f0/0
+        5 = access 1 DeepZone f0/1
+        x = -250.460461481
+        y = 33.497474683
+        z = 1.0
+[127.0.0.1:7207]
+    workingdir = C:\Documents and Settings\Cisco\Desktop\Cisco\GNS3\Dynamips
+    udp = 10701
+    [[7200]]
+        image = C:\Documents and Settings\Cisco\Desktop\Cisco\GNS3\Images\uncompressed\c7200-advipservicesk9-mz.151-4.M2.bin
+        ram = 512
+        idlepc = 0x60608040
+        sparsemem = True
+        ghostios = True
+    [[ROUTER http]]
+        console = 2111
+        aux = 2508
+        cnfg = configs\http.cfg
+        slot0 = C7200-IO-FE
+        f0/0 = SW3 3
+        symbol = computer
+        x = -32.686291501
+        y = 109.024386617
+        z = 1.0
+        hx = 71.0
+        hy = 12.0
+[127.0.0.1:7204]
+    workingdir = C:\Documents and Settings\Cisco\Desktop\Cisco\GNS3\Dynamips
+    udp = 10401
+    [[7200]]
+        image = C:\Documents and Settings\Cisco\Desktop\Cisco\GNS3\Images\uncompressed\c7200-advipservicesk9-mz.151-4.M2.bin
+        ram = 512
+        idlepc = 0x60608040
+        sparsemem = True
+        ghostios = True
+    [[ROUTER WAN]]
+        console = 2108
+        aux = 2505
+        cnfg = configs\WAN.cfg
+        slot0 = C7200-IO-2FE
+        f0/0 = Docentes f0/1
+        f0/1 = Externos f0/1
+        slot1 = PA-2FE-TX
+        f1/0 = Core-Servicos f0/0
+        f1/1 = ISP f0/1
+        x = -291.0
+        y = -325.0
+        z = 1.0
+        hx = 17.4583694397
+        hy = -36.5563491861
+[127.0.0.1:7210]
+    workingdir = C:\Documents and Settings\Cisco\Desktop\Cisco\GNS3\Dynamips
+    udp = 11001
+    [[7200]]
+        image = C:\Documents and Settings\Cisco\Desktop\Cisco\GNS3\Images\uncompressed\c7200-advipservicesk9-mz.151-4.M2.bin
+        ram = 512
+        idlepc = 0x60608040
+        sparsemem = True
+        ghostios = True
+    [[ROUTER DeepZone]]
+        console = 2115
+        aux = 2512
+        cnfg = configs\DeepZone.cfg
+        slot0 = C7200-IO-2FE
+        f0/0 = nio_gen_eth:\device\npf_{bec02d48-2dcb-42ad-9722-f0f2cc86c765}
+        f0/1 = SW3 5
+        x = -377.112698372
+        y = 123.414213562
+        z = 1.0
+        hx = -101.112698372
+        hy = -16.2426406871
+[127.0.0.1:7208]
+    workingdir = C:\Documents and Settings\Cisco\Desktop\Cisco\GNS3\Dynamips
+    udp = 10801
+    [[7200]]
+        image = C:\Documents and Settings\Cisco\Desktop\Cisco\GNS3\Images\uncompressed\c7200-advipservicesk9-mz.151-4.M2.bin
+        ram = 512
+        idlepc = 0x60608040
+        sparsemem = True
+        ghostios = True
+    [[ROUTER ssh]]
+        console = 2112
+        aux = 2509
+        cnfg = configs\ssh.cfg
+        slot0 = C7200-IO-FE
+        f0/0 = SW3 4
+        symbol = computer
+        x = -58.2893218815
+        y = 219.710678119
+        z = 1.0
+        hx = 68.0
+        hy = 33.0
+[127.0.0.1:7213]
+    workingdir = C:\Documents and Settings\Cisco\Desktop\Cisco\GNS3\Dynamips
+    udp = 11301
+    [[7200]]
+        image = C:\Documents and Settings\Cisco\Desktop\Cisco\GNS3\Images\uncompressed\c7200-advipservicesk9-mz.151-4.M2.bin
+        ram = 512
+        idlepc = 0x60608040
+        sparsemem = True
+        ghostios = True
+    [[ROUTER Core-Servicos]]
+        console = 2114
+        aux = 2514
+        cnfg = configs\Core-Servicos.cfg
+        slot0 = C7200-IO-2FE
+        f0/0 = WAN f1/0
+        f0/1 = SW3 1
+        x = -291.801081914
+        y = -88.4680374316
+        z = 1.0
+[127.0.0.1:7215]
+    workingdir = C:\Documents and Settings\Cisco\Desktop\Cisco\GNS3\Dynamips
+    udp = 11501
+    [[7200]]
+        image = C:\Documents and Settings\Cisco\Desktop\Cisco\GNS3\Images\uncompressed\c7200-advipservicesk9-mz.151-4.M2.bin
+        ram = 512
+        idlepc = 0x60608040
+        sparsemem = True
+        ghostios = True
+    [[ROUTER Externos1]]
+        console = 2117
+        aux = 2516
+        cnfg = configs\Externos1.cfg
+        slot0 = C7200-IO-2FE
+        f0/0 = Externos f0/0
+        symbol = computer
+        x = -880.113923861
+        y = -235.546247918
+        z = 1.0
+[127.0.0.1:7214]
+    workingdir = C:\Documents and Settings\Cisco\Desktop\Cisco\GNS3\Dynamips
+    udp = 11401
+    [[7200]]
+        image = C:\Documents and Settings\Cisco\Desktop\Cisco\GNS3\Images\uncompressed\c7200-advipservicesk9-mz.151-4.M2.bin
+        ram = 512
+        idlepc = 0x60608040
+        sparsemem = True
+        ghostios = True
+    [[ROUTER Externos]]
+        console = 2116
+        aux = 2515
+        cnfg = configs\Externos.cfg
+        slot0 = C7200-IO-2FE
+        f0/0 = Externos1 f0/0
+        f0/1 = WAN f0/1
+        x = -617.07020126
+        y = -229.889393669
+        z = 1.0
+[GNS3-DATA]
+    configs = configs
+    m11 = 0.707106781187
+    m22 = 0.707106781187
+    width = 20000
+    height = 10000
+    [[NOTE 1]]
+        text = "equipamento final"
+        x = -692.482322781
+        y = -388.815367264
+    [[NOTE 2]]
+        text = "f0/0\n193.136.1.1"
+        x = -366.281312654
+        y = -355.653895656
+    [[NOTE 3]]
+        text = "f0/1\n193.136.1.2"
+        x = -575.584919886
+        y = -368.381817717
+    [[NOTE 4]]
+        text = "f0/0\n192.168.200.1"
+        x = -369.109739779
+        y = 182.960461481
+    [[NOTE 5]]
+        text = "f0/1\n193.136.6.5"
+        x = -294.156420973
+        y = 126.391918985
+    [[NOTE 6]]
+        text = "router"
+        x = -278.600071788
+        y = -348.582827844
+    [[NOTE 7]]
+        text = "f0/1\n193.136.6.1"
+        x = -239.002092041
+        y = -64.5269119346
+    [[NOTE 8]]
+        text = "f0/0\n192.168.101.1"
+        x = -677.408296377
+        y = -176.450793489
+    [[NOTE 9]]
+        text = "f1/1\n193.137.1.2"
+        x = -205.060966544
+        y = -344.340187157
+    [[NOTE 10]]
+        text = "f0/0\n192.168.100.2"
+        x = -845.699710299
+        y = -401.310749906
+    [[NOTE 11]]
+        text = "f0/0\n192.168.101.2"
+        x = -861.256059485
+        y = -180.693434176
+    [[NOTE 12]]
+        text = "f0/1\n193.136.2.2"
+        x = -544.472221513
+        y = -194.835569799
+    [[NOTE 13]]
+        text = "f0/0\n193.136.6.4"
+        x = -55.1543289325
+        y = 174.274169979
+    [[NOTE 14]]
+        text = "f0/0\n192.168.100.1"
+        x = -695.793072687
+        y = -308.173664916
+    [[NOTE 15]]
+        text = "f1/0\n193.136.5.1"
+        x = -250.31580054
+        y = -280.700576851
+    [[NOTE 16]]
+        text = "f0/0\n193.137.2.1"
+        x = 46.6690475583
+        y = -300.499566724
+    [[NOTE 17]]
+        text = "f0/0\n193.136.6.2"
+        x = -66.4680374314
+        y = -28.9705627485
+    [[NOTE 18]]
+        text = "f0/0\n193.136.5.2"
+        x = -248.901586977
+        y = -136.651803615
+    [[NOTE 19]]
+        text = "f0/0\n193.136.6.3"
+        x = -73.5391052431
+        y = 76.8944443026
+    [[NOTE 20]]
+        text = "192.168.200.2\n(Configurar o WinXP com este ip)"
+        x = -415.778787337
+        y = 300.541197284
+    [[NOTE 21]]
+        text = "equipamento final"
+        x = -508.634559673
+        y = 126.159379566
+    [[NOTE 22]]
+        text = "f0/1\n193.136.2..1"
+        x = -370.523953342
+        y = -270.801081914
+    [[NOTE 23]]
+        text = "f0/0\n193.137.2.2"
+        x = 144.249783362
+        y = -354.440692221
+    [[NOTE 24]]
+        text = "router"
+        x = -356.5218613
+        y = -90.8751083189
+    [[NOTE 25]]
+        text = "f0/1\n193.137.1.1"
+        x = -53.7401153701
+        y = -293.428498912
+    [[Cloud SoftLoopBack]]
+        symbol = Host
+        x = -496.563058585
+        y = 300.136651713
+        z = 1.0
+        connections = DeepZone:f0/0:nio_gen_eth:\device\npf_{bec02d48-2dcb-42ad-9722-f0f2cc86c765}
+    [[SHAPE 1]]
+        type = rectangle
+        x = -520.430590952
+        y = -100.409162928
+        width = 592.555482634
+        height = 493.560533268
+    [[SHAPE 2]]
+        type = rectangle
+        x = -989.94949366
+        y = -408.707719526
+        width = 886.711903607
+        height = 267.286363289
+        z = -1.0
