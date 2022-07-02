@@ -1,5 +1,5 @@
 # Fundamentos de Computação Gráfica - 2021/2022
 
-## Link para o video do trabalho prático
+## Link para o video do trabalho prático:
 
-[FCG](https://youtu.be/jsWYWH0gdyg)
+["War and Peace"](https://youtu.be/jsWYWH0gdyg)
