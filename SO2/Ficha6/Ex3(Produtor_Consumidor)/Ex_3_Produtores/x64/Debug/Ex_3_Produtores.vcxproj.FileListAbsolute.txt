@@ -1,0 +1,1 @@
+D:\Aulas SO2\PRATICAS\Ficha6- Memoria Partilhada\Ficha6_Ex3(Produtor_Consumidor)\Ex_3_Produtores\x64\Debug\Ex_3_Produtores.exe

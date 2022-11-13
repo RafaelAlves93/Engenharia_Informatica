@@ -1,0 +1,3 @@
+﻿  leitor.c
+D:\ISEC\SO2\Práticas\Ficha7\Ex6_Leitor\leitor.c(54,42): warning C4267: 'função': conversão de 'size_t' para 'DWORD', possível perda de dados
+  Ex6_Leitor.vcxproj -> D:\ISEC\SO2\Práticas\Ficha7\x64\Debug\Ex6_Leitor.exe

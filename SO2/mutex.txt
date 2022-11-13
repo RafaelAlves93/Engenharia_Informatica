@@ -1,0 +1,30 @@
+MUTEX
+
+//estrutura de datos
+typedef struct{
+...
+HANDLE mutexPartilhado: //criar ,utex que vamos receber
+
+}TDados;
+
+
+int _tmain(int argc, TCHAR argv* []){
+...
+TDados tdados[MAX_THREADS];
+...
+	Handle mutex = CreateMutex(
+		NULL, // Parametro de segurança padrao
+		FALSE, //Se for TRUE, o mutex fica atribuido à Thread que o cri
+		NULL //nome do mutex
+	);
+...
+	tdados[i].mutexPartilhado = mutex;
+...
+	CloseHandle(mutex);
+}
+
+//Thread
+... 
+	WaitForSingleObject(dados->mutexPartilhado, INFINITE);
+...
+	RealeseMutex(dados->mutexPartilhado);

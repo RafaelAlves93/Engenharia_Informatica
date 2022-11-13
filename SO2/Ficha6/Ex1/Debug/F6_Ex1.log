@@ -1,0 +1,4 @@
+﻿  F6_Ex1.c
+D:\Aulas SO2\PRATICAS\Ficha6- Memoria Partilhada\F6_Ex1\F6_Ex1.c(82,14): warning C4013: 'CloseFile' undefined; assuming extern returning int
+F6_Ex1.obj : error LNK2019: unresolved external symbol _CloseFile referenced in function _wmain
+D:\Aulas SO2\PRATICAS\Ficha6- Memoria Partilhada\F6_Ex1\Debug\F6_Ex1.exe : fatal error LNK1120: 1 unresolved externals

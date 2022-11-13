@@ -1,0 +1,4 @@
+﻿  Origem.c
+D:\Aulas SO2\PRATICAS\Ficha3\Ficha3_Ex2\Origem.c(49,24): warning C4477: 'wscanf_s' : format string '%f' requires an argument of type 'float *', but variadic argument 1 has type 'double *'
+D:\Aulas SO2\PRATICAS\Ficha3\Ficha3_Ex2\Origem.c(49,24): message : consider using '%lf' in the format string
+  Ficha3_Ex2.vcxproj -> D:\Aulas SO2\PRATICAS\Ficha3\Ficha3_Ex2\Debug\Ficha3_Ex2.exe

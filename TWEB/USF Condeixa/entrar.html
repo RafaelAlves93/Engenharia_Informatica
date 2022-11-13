@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Centro de Saúde Condeixa </title>
+
+    <!-- Ligações CSS -->
+    <link href="trabalhotweb.css" rel="stylesheet" type="text/css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+ 
+<div class="containergeral">
+  
+<!-- Menu Navegação -->
+<div class="topnav" id="myTopnav">
+    <a href="inicio.html">Início</a>
+        <div class="dropdown">
+            <button class="dropbtn">Quem Somos
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <!-- SUBMENUS -->
+            <div class="dropdown-content">
+                <a href="equipa.html">Equipa</a>
+                <a href="contactos.html">Contactos</a>
+            </div>
+            <!-- FimSUBMENUS -->
+        </div>
+       
+        <div class="dropdown">
+            <button class="dropbtn">O que fazemos
+                <i class="fa fa-caret-down"></i>
+               
+            </button>
+            <!-- SUBMENUS -->
+            <div class="dropdown-content">
+                <a href="oquefazemos.html">Actividades da USF</a>
+                <a href="consultas.html">Consultas</a>
+                
+            </div>
+            <!-- FimSUBMENUS -->
+        </div>
+
+    <a href="indicadores.html">Indicadores</a>
+    <a href="entrar.html" class="active">Login</a>>
+</div>
+<!-- Fim Menu Navegação -->
+<!-- Login -->
+
+<div id="corpo">
+    <form id="formL">
+        <div class="contem">
+            <label class="titulonome"><b>Endereço de Email:</b></label>
+            <input type="email" placeholder="Insira o seu Email" name="utilizador" id="nome" required>
+
+            <label><b>Palavra-passe:</b></label>
+            <input type="password" placeholder="Insira Palavra-passe" name="palavra-passe" id="pw" required>
+
+             <button id=botõesL type= "button" name= "sign up" value= "sign up" onclick="validate()">Entrar</button>
+            <input type="checkbox" checked="confirmado"> Lembrar-me
+        </div>
+
+        <div class="contem" style="background-color:#f1f1f1">
+            <button id=botõesC type="button" class="cancelarbtn" onclick="resetar()">Cancelar</button>
+            <span class="pw"><a href="#" onclick="document.getElementById('registo').style.display='block'">Registe-se já</a></span>
+        </div>
+    </form>
+
+    <div id="registo" class="registo">
+        <span onclick="document.getElementById('registo').style.display='none'" class="fecho" title="Fechar">&times;</span>
+        
+        <form id="formR" action="" method="post">
+        <div id="conteudoR">
+            <label><b>Endereço de Email:</b></label>
+            <input type="email" placeholder="Insira Email" name="emailR" id="emailR" required>
+
+            <label><b>Palavra-passe:</b></label>
+            <input type="password" placeholder="Insira Palavra-passe" name="palavra-passeR" id="pwR" required>
+
+            <label><b>Repita Palavra-passe:</b></label>
+            <input type="password" placeholder="Repita Palavra-passe" name="pwRepete" id="pwRR" required>
+            <input type="checkbox" checked="confirmadoR" style="margin-top: 20px;"> Lembrar-me?
+
+            <div class="contemR">
+                <button id=botõesC type="button" class="cancelarbtnR" onclick="resetarR()">Cancelar</button>
+                <button id=botõesL type="submit" class="registarbtn">Registar</button>
+            </div>
+        </div>
+        </form>
+    </div>
+</div>
+
+<!-- Footer-->
+<footer>
+   
+    <!-- Logo no Footer -->
+    <div class="logofooter">
+      <a href="inicio.html" class="active"> <img src="img/usfcondeixa.png"></a>
+    </div>
+    <!-- Fim Logo no Footer -->
+
+    <!--Container Texto e Telefone Footer -->
+    <div class="containertextofooter"> 
+        
+        <!-- Texto Morada Footer -->
+        <div class="textofooter">
+        <p><b>USF Condeixa-a-Nova</b></p>
+        <p>Rua D. Ana Laboreiro D Eça</p>
+        <p>3150-195 Condeixa-a-Nova</p>
+        </div>
+        <!-- Fim Texto Morada Footer -->
+        
+    </div>
+    <!--Fim Container Texto Footer -->
+    
+    <!-- Redes Sociais -->
+    <div class="redessociais">
+        <ul>
+            <li><a href="https://www.facebook.com/usfcondeixa" target="_blank"><i class="fa fa-facebook"></i></a></li>
+            
+        </ul>
+    </div>
+    <!-- Fim Redes Sociais -->
+    
+</footer>
+<!-- Fim Footer-->
+    
+    
+</div> 
+<!-- Fim Container Geral -->
+</body>   
+
+    
+    
+<!-- Javascript para Menu-->
+<script>
+  /* Alterna entre adicionar ou remover a classe "responsive" ao menu de navegação quando o user clica nas barras*/
+function myFunction() {
+var x = document.getElementById("myTopnav");
+if (x.className === "topnav") {
+  x.className += " responsive";
+} else {
+  x.className = "topnav";
+}
+}
+</script>
+<!-- Fim Javascript para Menu-->
+
+    
+    
+<!-- Javascript para dar reset-->
+<script>
+function resetar(){ /*/ Dá reset às caixas de texto */
+
+  document.getElementById('formL').reset();
+}
+
+function resetarR(){
+
+  document.getElementById('formR').reset();
+}
+
+</script>
+<!-- Fim Javascript para dar reset-->
+
+    
+<!-- Javascript para confirmar pw -->
+<script>
+
+var password = document.getElementById("pwR")
+  , confirm_password = document.getElementById("pwRR");
+
+function validatePassword(){
+  if(password.value != confirm_password.value) {
+    confirm_password.setCustomValidity("As palavras-passe não são iguais");
+  } else {
+    confirm_password.setCustomValidity('');
+  }
+}
+
+password.onchange = validatePassword;
+confirm_password.onkeyup = validatePassword;
+
+</script>
+<!-- Javascript para confirmar pw -->
+
+    
+    
+<!-- Javascript para login sucedido -->
+
+<script>
+
+  function validate(){
+    var username= document.getElementById("nome").value;
+    var password= document.getElementById("pw").value;
+    
+    if (username =="rafa@mail.com" && password=="123456"){
+        alert("Login bem sucedido");
+        window.location="inicio.html"; //redirecionar para outra pagina
+        return false;
+    }
+    else{
+        alert("Login incorreto");
+    }
+}
+
+</script>
+
+<!-- Fim de Javascript para login sucedido -->
+
+</html>

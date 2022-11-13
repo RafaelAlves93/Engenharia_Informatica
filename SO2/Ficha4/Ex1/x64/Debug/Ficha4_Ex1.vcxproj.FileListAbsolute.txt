@@ -1,0 +1,2 @@
+D:\Aulas SO2\PRATICAS\Ficha4\Ficha4_Ex1\x64\Debug\Ficha4_Ex1.exe
+D:\Aulas SO2\PRATICAS\Ficha4-Threads\Ficha4_Ex1\x64\Debug\Ficha4_Ex1.exe

@@ -1,0 +1,3 @@
+﻿  escritor.c
+D:\ISEC\SO2\Práticas\Ficha7\Ex5_Escritor\escritor.c(36,65): warning C4267: 'função': conversão de 'size_t' para 'DWORD', possível perda de dados
+  Ex5_Escritor.vcxproj -> D:\ISEC\SO2\Práticas\Ficha7\x64\Debug\Ex5_Escritor.exe

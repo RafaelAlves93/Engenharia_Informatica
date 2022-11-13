@@ -1,0 +1,32 @@
+ 1) who | wc -l
+ 2) who | tr -s " " | cut -d " " -f1 | sort -u | wc -l
+ 3) who | tr -s " " | cut -d " " -f1 | grep "^filipe$" | wc -l
+ 4) ls -l /tmp | wc -l
+ 5) ls -l /bin/ | cut -d " " -f1 | grep x | wc -l
+ 6) ls -l /dev | grep "^[b,c]" | wc -l
+ 7) ls /dev | grep "^sd.$" | wc -l
+ 8) ls /etc/ | grep "gnome" | wc -l
+ 9) ls -l /etc | grep "^-rw-r-----" | wc -l > conta.txt
+10) echo "exemplo" > ~/ficheiro.txt
+    echo "etc" >> ~/ficheiro.txt
+11) chmod 640 ficheiro.txt
+12) ls ~ | grep "^p" > /tmp/lista.txt
+13) ls -l /bin/ | tr -s " " | sort -k5 -n -r | head -n 7 | cut -d " " -f5,9
+ou  ls -l /bin/ | tr -s " " | cut -d " " -f5 | sort -n -r | head -n 7
+14) ls /home | grep -i "^[a,e,i,o,u]"
+15) ls /home/$(ls /home | grep "filipe" | head -n 1)
+16) cat /etc/passwd | cut -d: -fl,3 | grep "l...$"
+17) cat /etc/passwd | cut -d: -fl,3 | grep "l...$" | sort
+18) cat /etc/passwd | cut -d: -fl,3 | grep "l...$" | sort -t ":" -k2 -r
+19) echo "estás a usar $(uname). Muito bem"
+20) ls /home/$(echo $USER) | wc -l
+21) 
+22) 
+23) 
+24) 
+25) ls -l ~ | tr -s " "| sort -t " " -k3 | head -n 4 | tail -n 3
+26) 
+27) 
+28) 
+29) 
+30)

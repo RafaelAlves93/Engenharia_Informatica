@@ -1,0 +1,7 @@
+﻿  Ex1_2.c
+D:\Aulas SO2\PRATICAS\Ficha5-\Ficha5_Ex1e2\Ex1_2.c(80,2): error C4996: 'wscanf': This function or variable may be unsafe. Consider using wscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Aulas SO2\PRATICAS\Ficha5-\Ficha5_Ex1e2\Ex1_2.c(82,2): error C4996: 'wscanf': This function or variable may be unsafe. Consider using wscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Aulas SO2\PRATICAS\Ficha5-\Ficha5_Ex1e2\Ex1_2.c(55,9): warning C4101: 'hThreads': unreferenced local variable
+D:\Aulas SO2\PRATICAS\Ficha5-\Ficha5_Ex1e2\Ex1_2.c(58,9): warning C4101: 'tdados': unreferenced local variable
+D:\Aulas SO2\PRATICAS\Ficha5-\Ficha5_Ex1e2\Ex1_2.c(71,15): warning C4101: 'inter': unreferenced local variable
+D:\Aulas SO2\PRATICAS\Ficha5-\Ficha5_Ex1e2\Ex1_2.c(70,15): warning C4101: 'range': unreferenced local variable

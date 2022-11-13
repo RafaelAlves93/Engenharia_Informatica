@@ -1,0 +1,5 @@
+﻿  Implicita.c
+Implicita.obj : error LNK2019: unresolved external symbol __imp__applyFactor referenced in function _wmain
+Implicita.obj : error LNK2019: unresolved external symbol __imp__factor referenced in function _wmain
+SO2_F3_DLL.lib : warning LNK4272: library machine type 'x64' conflicts with target machine type 'x86'
+D:\Aulas SO2\PRATICAS\Ficha3\Ficha3_Ex3\Debug\Ficha3_Ex3.exe : fatal error LNK1120: 2 unresolved externals

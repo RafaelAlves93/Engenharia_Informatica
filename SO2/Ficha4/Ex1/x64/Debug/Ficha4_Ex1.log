@@ -1,0 +1,6 @@
+﻿  Ficha4_Ex1.c
+D:\Aulas SO2\PRATICAS\Ficha4-Threads\Ficha4_Ex1\Ficha4_Ex1.c(25,44): warning C4018: '<=': signed/unsigned mismatch
+D:\Aulas SO2\PRATICAS\Ficha4-Threads\Ficha4_Ex1\Ficha4_Ex1.c(46,44): warning C4018: '<=': signed/unsigned mismatch
+D:\Aulas SO2\PRATICAS\Ficha4-Threads\Ficha4_Ex1\Ficha4_Ex1.c(48,26): warning C4013: 'verificaPrimo' undefined; assuming extern returning int
+D:\Aulas SO2\PRATICAS\Ficha4-Threads\Ficha4_Ex1\Ficha4_Ex1.c(65,32): warning C4142: 'verificaPrimo': benign redefinition of type
+  Ficha4_Ex1.vcxproj -> D:\Aulas SO2\PRATICAS\Ficha4-Threads\Ficha4_Ex1\x64\Debug\Ficha4_Ex1.exe

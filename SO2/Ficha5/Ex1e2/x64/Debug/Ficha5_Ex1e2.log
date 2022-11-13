@@ -1,0 +1,8 @@
+﻿  Ex1_2.c
+D:\Aulas SO2\PRATICAS\Ficha5- Mutex,CS,Events\Ficha5_Ex1e2\Ex1_2.c(162,13): warning C4473: 'wscanf_s' : not enough arguments passed for format string
+D:\Aulas SO2\PRATICAS\Ficha5- Mutex,CS,Events\Ficha5_Ex1e2\Ex1_2.c(162,13): message : placeholders and their parameters expect 2 variadic arguments, but 1 were provided
+D:\Aulas SO2\PRATICAS\Ficha5- Mutex,CS,Events\Ficha5_Ex1e2\Ex1_2.c(162,13): message : the missing variadic argument 2 is required by format string '%s'
+D:\Aulas SO2\PRATICAS\Ficha5- Mutex,CS,Events\Ficha5_Ex1e2\Ex1_2.c(162,13): message : this argument is used as a buffer size
+D:\Aulas SO2\PRATICAS\Ficha5- Mutex,CS,Events\Ficha5_Ex1e2\Ex1_2.c(102,15): warning C4101: 'inter': unreferenced local variable
+D:\Aulas SO2\PRATICAS\Ficha5- Mutex,CS,Events\Ficha5_Ex1e2\Ex1_2.c(101,15): warning C4101: 'range': unreferenced local variable
+  Ficha5_Ex1e2.vcxproj -> D:\Aulas SO2\PRATICAS\Ficha5- Mutex,CS,Events\Ficha5_Ex1e2\x64\Debug\Ficha5_Ex1e2.exe

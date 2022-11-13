@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Centro de Saúde Condeixa </title>
+
+    <!-- Ligações CSS -->
+    <link href="trabalhotweb.css" rel="stylesheet" type="text/css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Fim Ligações CSS -->
+
+</head>
+
+<body>
+
+<!-- Container Geral -->
+<div class="containergeral">
+  
+<!-- Menu Navegação -->
+<div class="topnav" id="myTopnav">
+ 
+    <a href="inicio.html">Início</a>
+    
+        <div class="dropdown">
+            <button class="dropbtn">Quem Somos
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <!-- SUBMENUS -->
+            <div class="dropdown-content">
+                <a href="equipa.html">Equipa</a>
+                <a href="contactos.html">Contactos</a>
+            </div>
+            <!-- FimSUBMENUS -->
+        </div>
+    
+        <div class="dropdown">
+            <button class="dropbtn" id="active">O que fazemos
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <!-- SUBMENUS -->
+            <div class="dropdown-content">
+                <a href="oquefazemos.html" class="active">Actividades da USF</a>
+                <a href="consultas.html">Consultas</a>
+            </div>
+            <!-- FimSUBMENUS -->
+        </div>
+    
+   
+    <a href="indicadores.html">Indicadores</a>
+    <a href="entrar.html">Login</a>
+   
+</div>
+<!-- Fim Menu Navegação -->
+    
+<!-- Texto O que fazemos -->
+<div id="oquefazemos">
+    <br>
+    <h2>Acções de Sensibilização</h2>
+    <div class="formulario2">
+<div class="colunasoquefazemos">
+    <p><b>10 de Setembro - Dia Mundial da Prevenção do Suicídio</b></p>
+        <p>Não negligencie os sinais de alarme!</p>
+        <p> Sabe como pedir ajuda?</p>
+        <p>- Em caso de ideação suicida principalmente com um plano já estruturado, deve dirigir-se de imediato ao SERVIÇO DE URGÊNCIA;</p>
+         <p>- Centro de Saúde;</p>
+        <p> - Linha SNS 24 (808 24 24 24);</p>
+         <p> - Linhas de Apoio Emocional como Conversa Amiga (808 237 327 ou 210 027 159) ou SOS Estudante (239 484 020);</p>
+        <p> - Procure amigos ou familiares de confiança.</p>
+        <p>Não tem que viver em sofrimento e sozinho!</p>
+        
+    
+    <iframe width="570" height="315" src="https://www.youtube.com/embed/IyXe9mV4XFA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <!--<div class="imgfundo1"><img src="img/suicidio.jpg">--></div>
+
+    
+<div class="colunasoquefazemos">
+    <p><em>“Está tudo bem se não estiver tudo bem”</em></p>
+    <p>Celebração do <b>Dia Mundial da Saúde Mental</b> através de campanha de sensibilização nas ruas da cidade de Condeixa junto do público em geral (“Está tudo bem se não estiver tudo bem”).</p>
+    <p>Data:	10/10/2019</p>
+    <p>Local:   Condeixa-a-Nova</p>
+        
+        <br>
+        <div class="conteudo">
+            <div class="OsSlides ">
+            <div class="numeros">1 / 2</div>
+                <img src="img/saudemental.jpg" style="width:100%">
+            <div class="texto"></div>
+        </div>
+    
+        <div class="OsSlides ">
+        <div class="numeros">2 / 2</div>
+                <img src="img/saudemental1.jpg" style="width:100%">
+        <div class="texto"></div>
+        </div>
+        
+        <a class="antes" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="depois" onclick="plusSlides(1)">&#10095;</a>
+       
+        
+        </div>            
+</div>
+    
+
+</div>
+<!-- Fim Texto O que fazemos -->
+     </div>
+    
+<!-- Footer-->
+<footer>
+   
+    <!-- Logo no Footer -->
+    <div class="logofooter">
+        <a href="inicio.html" class="active"> <img src="img/usfcondeixa.png"></a>
+    </div>
+    <!-- Fim Logo no Footer -->
+
+    <!--Container Texto e Telefone Footer -->
+    <div class="containertextofooter"> 
+        
+        <!-- Texto Morada Footer -->
+        <div class="textofooter">
+        <p><b>USF Condeixa-a-Nova</b></p>
+        <p>Rua D. Ana Laboreiro D Eça</p>
+        <p>3150-195 Condeixa-a-Nova</p>
+        </div>
+        <!-- Fim Texto Morada Footer -->
+        
+    </div>
+    <!--Fim Container Texto Footer -->
+    
+    <!-- Redes Sociais -->
+    <div class="redessociais">
+        <ul>
+            <li><a href="https://www.facebook.com/usfcondeixa" target="_blank"><i class="fa fa-facebook"></i></a></li>
+            
+        </ul>
+    </div>
+    <!-- Fim Redes Sociais -->
+    
+</footer>
+<!-- Fim Footer-->
+    
+    
+</div> 
+<!-- Fim Container Geral -->
+</body>   
+
+<!-- Javascript para Menu-->
+<script>
+    /* Alterna entre adicionar ou remover a classe "responsive" ao menu de navegação quando o user clica nas barras*/
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+<!-- Fim Javascript para Menu-->
+
+<!-- Javascript para slideshow -->
+<script>
+        /*Definir SlideIndex=1 (primeira imagem vai ter slideIndex 1*/
+        /*Chama a função showSlides(1) para mostrar a 1ª imagem*/ 
+        
+        var slideIndex = 1;                                                    
+        showSlides(slideIndex); 
+
+        /*Quando o user carrega num dos botões chama esta função plusSlides(), que é o que ficou definido em cima na definição dos Botões*/
+        /*Chama a função showSlides(slideIndex)onde o slideIndex =slideIndex+1 ou slideIndex-1, assim o slideshow vai mudar uma imagem para a esquerda ou para a direita*/
+        
+        function plusSlides(n) {
+        showSlides(slideIndex += n);
+        }
+        
+                              
+        /*Definir a variável i que vai ser um contador*/
+        /* Definir a variável x que é igual ao número de slides*/
+        /*  Faz o reset de o valor de slideIndex para 1 quando o último slide é ultrapassado*/
+        /*  se na primeira imagem o utilizador carregar no botão para trás em vez de o botão seguinte, o slideshow tem que mostrar a última imagem, entao atribui ao slideIndex o valor de o número total de slides*/
+        /* a função showSlides esconde (display=none) todas as imagens*/
+        /* a função showSlides mostra (display=block) o elemento com o número de slideIndex, ou seja, só mostra a imagem de o slide currente*/
+        
+        function showSlides(n) { 
+            var i; 
+            
+            var x = document.getElementsByClassName("OsSlides"); 
+            
+            if (n > x.length) {slideIndex = 1}; 
+            
+            if (n < 1) {slideIndex = x.length}; 
+            
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";  
+        }
+            
+        x[slideIndex-1].style.display = "block"; 
+            
+        }
+</script>
+
+
+</html>
