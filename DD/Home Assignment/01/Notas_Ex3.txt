@@ -1,0 +1,10 @@
+Comando mac address ipterm
+hwaddress ether 02:01:31:89:AA:03
+
+
+
+
+no encaminhamento indireto o pc vai fazer um arp para saber o mac do router
+no arp proxy o pc vai pensar que o pc destino vai estar na mm rede e vai fazer um arp para saber o mac desse pc
+mas como o pc destino esta noutra rede quem vai responder vai ser o router 
+consegue-se ver isso ao olhar para o mac address que vai responder ao arp no wireshark
