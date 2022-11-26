@@ -1,0 +1,13 @@
+1. Tenha em consideração o "Home Assignment 03° na resolução deste teste. A) Com a sua topologia configurada como solicitado na pergunta 2 e ativa no seu GNS3, consulte e anote abaixo o MACO IP do PC3 da rede: B) Faça ping desse terminal para R1.60/0 e depois para PC3 da rede B. Que entradas ficam na cache ARP de PC3 da rede A?
+
+2. Existem cenários de falha (pergunta 3) de interfaces dos routers que não afetem a comunicação entre
+as duas redes?
+
+3. Assuma que todos os switches e routers da topologia possuem dois noves de disponibilidade. Qual disponibilidade da rede entre terminais de redes distintas? E se a topologia possuísse apenas um router?
+
+O.99 x 0.99 x 0.99
+E 0.99 x (1-[(1-0.99)x(1-0.99)] x 0.99
+97% e 98%
+
+
+4. Recorrendo a DHCP para endereçar os terminais encontrou (pergunta 11) alguma estratégia, os seis terminais da rede A estão ativos, de metade deles usarem R1 e a outra metade usada no R2 sua troca de informação que fazem com a rede B (proporcionando balanceamento de carga equilibrado)? Explique-a com detalhe justificando o devido balanceamento de carga.

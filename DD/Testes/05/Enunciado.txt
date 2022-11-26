@@ -1,0 +1,37 @@
+1)PI Multihoming
+-Isto é quando nós requisitamos endereços a um Registry Regional e depois o mais normal é, a empresa que faz isto instala o BGP e anuncia as suas rotas através dos vários ISPs e assim consegue atrair trafego de um ISP ou de outro ISP.
+-Uma DESVANTAGEM de usarmos PI é que as tabelas de encaminhamento ficam muito maiores e isso tem graves consequências para os routers que estão na default free zone (DFZ, routers que não tem a rede 0.0.0.0)
+-O BGP só consegue anunciar endereços que sejam /24 ou mais curtos
+-Um dos parametros do BGP é a periocidade que ele dispoleta o recalculo da FIB(versao compilada da tabela de encaminhamento)
+
+2)Como transformar em 3 9's(?)/ Como haver mais disponibildiade
+
+3)Aspetos positivos e negativos ...
+
+4)Funcionamento(?) do GLBP
+-Versão melhorada do HSRP que suporta explicitamente load balancing sem a
+necessidade de configurar múltiplos grupos e múltiplos DGs em clientes distintos
+-Em vez de um, podem ser usados simultaneamente até 4 routers a desempenhar a
+tarefa de DG
+-Todos partilham o mesmo endereço IP Virtual
+-Todos recorrem a um endereço MAC Virtual distinto
+-Sendo que este protocolo suporta o failover dos membros como o HSRP já fazia
+-Tal como o HSRP, corre sobre UDP no mesmo grupo multicast mas num porto
+distinto.
+
+Funcionamento do GLBP:
+-Os membros do grupo GLBP elegem um elemento como AVG (Active Virtual
+Gateway)
+-O AVG atribui um MAC Virtual a cada membro do grupo
+-Estes tornam-se AVF (Active Virtual Forwarders)
+-São no máximo 4 e passam a ter responsabilidade de encaminhar tráfego
+enderelado para o seu Virtual MAC
+-O AVG responde aos ARP Requests dirigidos ao IP Virtual
+-Os AVFs estão sempre disponíveis como backup do AVG
+
+5)Conceito de anycast
+-A comunicação Anycast (um para um de muitos) é um novo paradigma que tem sido
+usada na prática para pelo menos um serviço crítico na Internet: o DNS. Tal como o
+multicast (um para muitos), este paradigma utiliza o conceito de grupo, mas a informação
+é enviada apenas para um dos membros do grupo que esteja em melhor condições
+(tipicamente o mais próximo), em vez de sempre para todos

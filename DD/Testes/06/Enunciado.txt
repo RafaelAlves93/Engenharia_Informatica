@@ -1,0 +1,11 @@
+Pergunta que era sobre os pacotes http era que existia uma “rota” que dizia que para aceder ao ip publico do servidor era o ip privado x e essas rotas estao automaticamente definidas nas tabelas NAT. E na saida temos sempre o hsrp a trabalhar
+
+1)
+
+2)
+
+3)
+nao dava para fazer ping pq quando o trafego vem do ISP pode ir pelo R2 ou R3 e caso vá pelo R3 e nao o R2, o R3 nao vai ter as translactions ou seja se for pelo R3 nao sabe por onde ir
+
+A pergunta sobre os icmp udp era supostamente que como nao tinhamos instalado o snat ou b2b e nao controlamos por onde o risp manda os dados. Se recebermos pelo R3 a tabela do nat so era preenchida no R3 e na saida era sempre pelo R2 que nao tem essa tabela preenchida
+Ou seja nao ia dar sempre

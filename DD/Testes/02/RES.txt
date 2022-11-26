@@ -1,0 +1,6 @@
+1 - colocar o HSRP nas duas redes
+2 - explicar que havia ICMP Redirect porque tinhas configurado o RIP nos dois Routers e o R2 tinha enviado pelo RIP que conhecia a Rede e o R1 não conhecia a rede oposta porque tinhas desligado a porta e0/0.
+3 - Standby
+4 - O R2 mantém-se o AR mesmo que mudes a prioridade do R3 para 200 porque o protocolo é não preemptivo por omissão e o AR já tinha sido definido para R2.
+O R3 só passava a ser o AR se o R2 deixasse de ser o AR então tinha que haver novamente uma comparação das prioridades ou se forçasse na configuração que o HRSP fosse preemptivo ai sim ao fim de x segundos ia comparar as prioridades e mudar para o R3.
+5 - Dava para fazer telnet para o equipamento pelo endereço IP virtual, o que acontecia era se desligasses a porta do Router que estavas a aceder remotamente ele desligava a sessão. 
