@@ -1,0 +1,7 @@
+2- é possível se metêssemos o protocolo HRSP nas duas redes.
+
+3- 
+
+4- o protocolo só funciona se o router para qual foi escolhido o AR tanto da rede A como a rede B tem que ter as duas portas a funcionar porque se a porta e0/0 tiver em shutdown(rede A) e a porta e0/1 tiver ligada(rede B) no lado da rede B vai pensar que pode enviar para interface e0/1 porque está operacional ele só vai detetar que deve mudar outra interface da rede B se uma das interfaces da rede B falhar mas quando tenta alcançar a rede A por esse router não consegue porque a e0/0 está desligada e não é possível fazer redirect dos pacotes porque não está a ser usado um protocolo de encaminhamento como o RIP ou encaminhamento estático.
+Apesar de teres o protocolo em ambas as redes ele continua a funcionar de forma isolada e não de forma cooperativa o protocolo HRSP que meteste na rede B não tem informação das falhas da rede A e vice versa ele só se preocupa com a própria rede.
+
