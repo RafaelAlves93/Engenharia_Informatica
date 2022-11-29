@@ -2,4 +2,4 @@
 
 ## Link para o video do trabalho prático:
 
-["War and Peace"](https://youtu.be/jsWYWH0gdyg)
+["War and Peace"](https://www.youtube.com/watch?v=XkOQMo4Ituw)
