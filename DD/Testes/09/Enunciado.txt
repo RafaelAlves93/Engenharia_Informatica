@@ -1,0 +1,5 @@
+1) Faz sentido haver SNAT em routers ligados a ISP diferentes.
+
+2) Como aumentar a disponiblidade (empresa tinha um nove e queria passar para 3)
+
+3) Como tolerar falhas no switch de distribuidor de edificio.
