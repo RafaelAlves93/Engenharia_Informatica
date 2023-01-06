@@ -1,0 +1,3 @@
+1) (indicar e especificar) três características do QoS 
+2) lacuna das portas ethernet 
+3) (como se fazia nos SW, configuraçao?) escoamento
