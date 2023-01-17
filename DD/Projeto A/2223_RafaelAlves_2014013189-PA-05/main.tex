@@ -1,0 +1,119 @@
+%---------------------------------------------
+% RAFAEL FILIPE MARTINS ALVES 2014013189
+%---------------------------------------------
+
+\documentclass[a4paper,12pt]{report}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc} 
+\usepackage{csquotes}
+\usepackage[portuguese]{babel}
+\usepackage[printonlyused]{acronym}
+\usepackage{hyperref} %didelinks
+\usepackage[pdftex]{graphicx}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{biblatex}
+\usepackage{indentfirst}
+\usepackage{appendix}
+\usepackage{amsmath}
+\usepackage{acronym}
+\usepackage[top=12mm,bottom=20mm]{geometry} %width=150mm
+
+
+\addbibresource{biblio.bib}
+\graphicspath{{./imagens}}
+\thispagestyle{empty}
+
+
+\def\data{14 de Outubro de 2022}
+
+
+\begin{document}
+\nocite{*}
+    \begin{titlepage}
+    	\begin{center}
+    		\includegraphics[width=0.6\textwidth]{logo_isec.png}
+    		\large\textsc{
+				   \\Instituto Superior de Engenharia de Coimbra\\
+				   Licenciatura em Engenharia Informática\\
+				   Ramo de Redes e Administração de Sistemas
+	            }
+    		
+    		\vspace{3cm}
+    		%\vspace*{\fill}
+    		\huge
+    		\textbf{Disponibilidade e Desempenho}
+    		\vspace{1.5cm}
+    		
+    		\huge
+    		\textbf{Disponibilidade e Desempenho em Aplicações Web Modernas}
+    		
+    		\vspace{2cm}
+    		\textbf{Rafael Alves - 2014013189}
+    		
+    		\vfill
+    		a21240485@isec.pt
+    		
+    		\vspace*{\fill}
+    		\normalsize
+            \data
+    	\end{center}
+    \end{titlepage}
+
+
+%\pagenumbering{gobble} %sem numero pagina
+\pagenumbering{roman}
+\tableofcontents
+\listoftables
+\listoffigures
+
+%\include{chapters/acronyms}
+\input{chapters/acronyms}
+
+
+%-----------------------------------------------
+\clearpage
+\pagenumbering{arabic}
+%-----------------------------------------------
+
+\chapter{Introdução}
+\input{chapters/intro}
+
+\chapter{Conceitos de Disponibilidade}
+\input{chapters/chapter2}
+
+\chapter{Replicação de estado em Sistemas Distribuídos}
+\input{chapters/chapter3}
+
+\chapter{Arquiteturas de Software Modernas}
+\input{chapters/chapter4}
+
+\chapter{Escalabilidade Horizontal e Vertical}
+\input{chapters/chapter5}
+
+\chapter{Análise de Sistemas de Gestão de Bases de Dados}
+\input{chapters/chapter6}
+
+\chapter{Galera Cluster}
+\input{chapters/chapter7}
+
+\chapter{Reverse Proxy e Forward Proxy}
+\input{chapters/chapter8}
+
+\chapter{Estudo Experimental Meta 4}
+\input{chapters/chapter9}
+
+\chapter{Estudo Experimental Meta 5}
+\input{chapters/chapter10}
+
+%--------BIBLIOGRAFIA--------------------
+\printbibliography
+\clearpage
+\pagenumbering{Alph}
+%----------------------------------------
+%  ANEXO
+%----------------------------------------
+\appendix
+\chapter{Anexo}
+\input{chapters/attachment}
+\end{document}
