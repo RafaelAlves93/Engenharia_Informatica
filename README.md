@@ -6,7 +6,7 @@
 - [x] Cablagem Estruturada
 - [x] Serviços de Redes 1
 - [x] Serviços de Redes 2
-- [ ] Disponibilidade e Desempenho
+- [x] Disponibilidade e Desempenho
 - [x] Tecnologias de Ligação
 - [x] Gestão de Redes
 - [ ] Sistemas Operativos II
