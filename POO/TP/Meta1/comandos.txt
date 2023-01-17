@@ -1,5 +1,0 @@
-see 3 3
-see 6 6
-slide down 3
-slide right 1
-slide up 2
