@@ -1,0 +1,951 @@
+\section{Instalação Proxmox}
+
+Inicialmente foram criados os vários servidores proxmox (DD1, DD2, DD3) e para isso fica registado passo a passo a instalação.\\
+
+Passo 1: "Create a new virtual machine".
+\begin{figure}[H]
+\center
+\includegraphics[width=13cm]{Screenshot_1.png}
+\caption{Create a new virtual machine}
+\end{figure}
+
+\newpage
+Passo 2: Aqui é escolha pessoal, eu escolhi "Typical".
+\begin{figure}[H]
+\center
+\includegraphics[width=13cm]{Screenshot_2.png}
+\caption{Tipo de configuração}
+\end{figure}
+
+Passo 3: Escolhi instalar o Sistema Operativo mais tarde.
+\begin{figure}[H]
+\center
+\includegraphics[width=13cm]{Screenshot_3.png}
+\caption{Install the Operating System later}
+\end{figure}
+
+\newpage
+Passo 4: Por predefinição deixei ficar as opções dadas uma vez que o proxmox é baseado em Linux.
+\begin{figure}[H]
+\center
+\includegraphics[width=13cm]{Screenshot_4.png}
+\caption{Tipo Sistema Operativo}
+\end{figure}
+
+Passo 5: Escolher o nome (Proxmox) para a \ac{VM} e a localização. Neste caso utilizei um disco externo de 1TB.
+\begin{figure}[H]
+\center
+\includegraphics[width=13cm]{Screenshot_5.png}
+\caption{Nome e localização da \ac{VM}}
+\end{figure}
+
+\newpage
+Passo 6: Definir o tamanho do disco para a \ac{VM}. Neste caso foi 120Gb.
+\begin{figure}[H]
+\center
+\includegraphics[width=13cm]{Screenshot_6.png}
+\caption{Tamanho Disco \ac{VM}}
+\end{figure}
+
+Passo 7: Resumo da configuração e finalização.
+\begin{figure}[H]
+\center
+\includegraphics[width=13cm]{Screenshot_7.png}
+\caption{Finalização}
+\end{figure}
+
+\newpage
+Passo 8: Nas propriedades da \ac{VM}, inseri a \ac{ISO} do proxmox em "\ac{CD/DVD} (\ac{SATA})".
+\begin{figure}[H]
+\center
+\includegraphics[width=13cm]{Screenshot_8.png}
+\caption{Inserir \ac{ISO}}
+\end{figure}
+
+Passo 9: Ainda nas propriedades da \ac{VM}, a placa de rede tem de estar em modo \textit{bridge}.
+\begin{figure}[H]
+\center
+\includegraphics[width=13cm]{Screenshot_9.png}
+\caption{Placa de rede}
+\end{figure}
+
+\newpage
+Passo 10: Depois de alterar algumas configurações iniciais, podemos iniciar a \ac{VM} e iniciar a instalação.
+\begin{figure}[H]
+\center
+\includegraphics[width=13cm]{Screenshot_10.png}
+\caption{Inicialização da \ac{VM}}
+\end{figure}
+
+Passo 11: Aceitar os termos e condições do proxmox.
+\begin{figure}[H]
+\center
+\includegraphics[width=13cm]{Screenshot_11.png}
+\caption{Termos e condições}
+\end{figure}
+
+\newpage
+Passo 12: Escolha do disco para a instalação do servidor. No meu caso estou a usar um disco \ac{HDD} de 1TB e os 120Gb foi a "partição" que criamos inicialmente na criação da \ac{VM}.
+\begin{figure}[H]
+\center
+\includegraphics[width=13cm]{Screenshot_14.png}
+\caption{Escolha do disco rígido}
+\end{figure}
+
+O File System usado foi \textit{ext4}.
+\begin{figure}[H]
+\center
+\includegraphics[width=13cm]{Screenshot_12.png}
+\caption{File System}
+\end{figure}
+
+\newpage
+Passo 13: Escolha do país, fuso horário e \textit{layout} do teclado.
+\begin{figure}[H]
+\center
+\includegraphics[width=13cm]{Screenshot_15.png}
+\caption{Localização e fuso horário}
+\end{figure}
+
+Passo 14: Definir uma \textit{password} de administração e \textit{email}.
+\begin{figure}[H]
+\center
+\includegraphics[width=13cm]{Screenshot_16.png}
+\caption{Password de Administração e Email}
+\end{figure}
+
+\newpage
+Passo 15: Para a configuração da Rede de Gestão foi definido a placa de rede (ens33), hostoname (DD1.VM), \ac{IP} (192.168.1.129/24), gateway e \ac{DNS}.
+\begin{figure}[H]
+\center
+\includegraphics[width=13cm]{Screenshot_17.png}
+\caption{Configuração da Rede de Gestão}
+\end{figure}
+
+Passo 16: Aqui podemos verificar o resumo das opções de instalação e prosseguir com a instalação.
+\begin{figure}[H]
+\center
+\includegraphics[width=13cm]{Screenshot_18.png}
+\caption{Resumo da Instalação}
+\end{figure}
+
+\newpage
+Passo 17: Instalação do proxmox.
+\begin{figure}[H]
+\center
+\includegraphics[width=13cm]{Screenshot_19.png}
+\caption{Instalação}
+\end{figure}
+
+Passo 18: Após a instalação do proxmox é necessário reiniciar o servidor e de seguida fica pronto a ser utilizado. Na tela de apresentação do servidor é apresentado o endereço para poder aceder ao servidor proxmox através da interface web.
+\begin{figure}[H]
+\center
+\includegraphics[width=13cm]{Screenshot_20.png}
+\caption{\ac{PVE} login}
+\end{figure}
+
+\newpage
+Passo 19: Depois de verificar o \ac{PVE} login no passo anterior, o mesmo nos indica o endereço para poder aceder à interface web. Num browser à escolha apenas basta conectar ao \ac{IP} do servidor mais a porta 8006 do proxmox. 
+\begin{verbatim}https://192.168.1.129:8006\end{verbatim}
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_21.png}
+\caption{Ligação Não Privada}
+\end{figure}
+
+O browser vai mostrar o erro de que a ligação não é privada porque não existe um certificado válido mas prosseguimos carregando em: \textbf{"Continuar para 192.168.1.129 (não seguro)"}. De seguida passamos para a tela inicial de login do servidor proxmox.
+
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_22.png}
+\caption{\ac{PVE} login}
+\end{figure}
+
+O \textit{username} por predefinição é \textit{root} e a \textit{password} foi definida no passo 14.
+
+\newpage
+Passo 20: Depois da autenticação temos acesso completo ao servidor proxmox via interface web. 
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_24.png}
+\caption{Summary DD1}
+\end{figure}
+
+O objetivo é a construção de um \textit{cluster} e para isso é preciso no mínimo 3 servidores. De seguida foi adicionado mais 2 servidores proxmox seguindo todos os passos anteriores.
+Depois de repetir todos os passos anteriores o objetivo é ter 3 servidores proxmox a funcionar em simultâneo (DD1, DD2 e DD3) no VMWare:
+
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_26.png}
+\caption{Servidor proxmox DD2}
+\end{figure}
+
+\newpage
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_27.png}
+\caption{Servidor proxmox DD3}
+\end{figure}
+
+\newpage
+\section{Configuração Ficheiro Hosts}
+O ficheiro "hosts" é usado principalmente para resolver nomes de host localmente, sem precisar de uma consulta ao servidor \ac{DNS}. Ele também pode ser usado para bloquear o acesso a sites específicos, redirecionando o nome de host para um endereço \ac{IP} inválido. Além disso, é frequentemente usado em ambientes de desenvolvimento para mapear nomes de host para endereços IP locais.
+
+Desta forma prosseguimos com a configuração do ficheiro "hosts" em cada servidor. O ficheiro "hosts" encontra-se na seguinte diretoria:
+\begin{verbatim}/etc/hosts\end{verbatim}
+
+Esta configuração foi realizada através da linha de comandos do servidor proxmox e para isso basta efetuar o \textit{login} no servidor com o \textit{username} \textbf{root} e a \textit{password}.\\
+
+Passo 1: Como foi dito anteriormente, é preciso ter acesso ao servidor proxmox e efetuar o \textit{login}.  
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_20.png}
+\caption{Login Servidor DD1}
+\end{figure}
+
+\newpage
+Passo 2: Depois de efetuar o \textit{login}, com recurso ao editor de texto nano do linux, configuramos o ficheiro "hosts":
+\begin{verbatim}nano /etc/hosts\end{verbatim}
+
+No servidor 1, Proxmox (DD1), foi adicionado o servidor 2 e 3.
+\begin{verbatim}192.168.1.130 DD2.VM2 DD2\end{verbatim}
+\begin{verbatim}192.168.1.131 DD3.VM3 DD3\end{verbatim}
+
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_135.png}
+\caption{Configuração do ficheiro Hosts no servidor 1}
+\end{figure}
+
+Nos restantes servidores basta seguir os passos anteriores e adicionar os servidores corretos.
+
+\newpage
+Servidor 2, Proxmox1 (DD2), foi adicionado o servidor 1 e 3.
+\begin{verbatim}192.168.1.129 DD1.VM1 DD1\end{verbatim}
+\begin{verbatim}192.168.1.131 DD3.VM3 DD3\end{verbatim}
+
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_136.png}
+\caption{Configuração do ficheiro Hosts no servidor 2}
+\end{figure}
+
+Servidor 3, Proxmox2 (DD3), foi adicionado o servidor 1 e 2.
+\begin{verbatim}192.168.1.129 DD1.VM1 DD1\end{verbatim}
+\begin{verbatim}192.168.1.130 DD2.VM2 DD2\end{verbatim}
+
+\begin{figure}[H]
+\center
+\includegraphics[width=13cm]{Screenshot_137.png}
+\caption{Configuração do ficheiro Hosts no servidor 3}
+\end{figure}
+
+
+\section{Segunda Placa de Rede}
+Adicionar uma segunda placa de rede a um sistema é uma maneira de criar redundância e garantir a disponibilidade da rede em caso de falha de uma das placas de rede. É especialmente útil em ambientes de alta disponibilidade \ac{HA}, onde é importante minimizar o tempo de inatividade (\textit{downtime}).
+
+Para criar redundância com duas ou mais placas de rede, precisamos de configurar as placas de rede de forma a trabalharem em conjunto. Isso pode ser feito de várias maneiras, dependendo do \ac{SO} e do hardware utilizado. Algumas opções comuns são:
+
+\begin{enumerate}
+    \item Configurar as placas de rede para trabalhar em conjunto como um link ativo-passivo: uma placa de rede é configurada como principal e a outra é configurada como secundária. A placa principal é usada para o tráfego de rede, enquanto a placa secundária é usada apenas em caso de falha da placa principal.
+    \item Configurar as placas de rede para trabalhar em conjunto como um link ativo-ativo: ambas as placas de rede são configuradas para trabalhar ao mesmo tempo e dividir o tráfego de rede. Isso pode ser feito usando técnicas como balanceamento de carga ou agregação de link.
+    \item Configurar as placas de rede como um \textit{bond}: Um \textit{bond} é uma configuração de rede que permite combinar múltiplas placas de rede num único link. Isso permite criar uma conexão mais rápida e mais confiável, pois as placas de rede trabalham em conjunto para transmitir e receber dados.
+\end{enumerate}
+
+O meu objetivo com a segunda placa de rede foi criar boas práticas de implementação/configuração de rede apesar de no trabalho não aprofundar muito este tema (agregação de placas de rede) porque o principal foco não era este. Então, como acima mostrei (ambiente proxmox), tentei isolar a rede do cluster da rede de administração. Para isso criei uma segunda placa de rede para a rede do cluster (10.10.10.0).
+
+\newpage
+De seguida, mostro passo a passo da criação e configuração da segunda placa de rede.\\
+
+Passo 1: Em \textbf{Virtual Machine Settings} do servidor proxmox, na aba de \textbf{Hardware} carregar em \textbf{Add...}.
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{placa1.png}
+\caption{Definições do servidor proxmox}
+\end{figure}
+
+\newpage
+Passo 2: Como é uma placa de rede escolhemos \textbf{Network Adapter}.
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{placa2.png}
+\caption{Add Hardware Wizard}
+\end{figure}
+
+\newpage
+Passo 3: Por fim, colocar a nova placa de rede (\textbf{Network Adpater 2}) em modo \textit{bridged}.
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{placa3.png}
+\caption{Modo Bridge Placa de Rede}
+\end{figure}
+
+Para os outros 2 servidores é só repetir estes 3 passos anteriores.
+
+\newpage
+Passo 4: Depois de adicionar a nova placa de rede aos servidores e colocar em modo \textit{bridged}, na interface web dos 3 servidores proxmox já conseguimos ver a nova placa de rede (ens37). Para fazer a gestão da placas de rede no proxmox vamos ao nosso \textbf{Datacenter} e escolhemos o nosso servidor, no meu caso DD2, depois \textbf{System} e \textbf{Network}.
+Por fim, foi só atribuir o \ac{IP} (10.10.10.130) à nova placa de rede carregando em \textbf{Edit}. Não esquecer de colocar a \textit{checkbox} \textbf{Autostart} marcada para a placa de rede iniciar sempre com o servidor.
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_30.png}
+\caption{\ac{IP} Segunda Placa de Rede}
+\end{figure}
+
+Passo 5: Depois de atribuir o \ac{IP} à placa de rede é sempre importante e necessário reiniciar o sistema.
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_31.png}
+\caption{Restart Node}
+\end{figure}
+
+Os passos anteriores são repetidos nos restantes servidores.
+
+\newpage
+Sem recorrer à interface gráfica do servidor também podemos configurar os passos anteriores através de linha de comandos, basta abrir a \textbf{shell} do servidor e temos acesso ao \ac{SO}. Como fiz a configuração na interface gráfica podemos verificar o ficheiro \textit{interfaces} do linux que contém a configuração das placas de rede. 
+\begin{verbatim}nano /etc/network/interfaces\end{verbatim}
+
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_52.png}
+\caption{Ficheiro configuração interfaces}
+\end{figure}
+
+
+\newpage
+\section{Conectividade}
+Feitas as instalações e configurações necessárias para obter um sistema funcional e comunicativo precisamos de verificar se os servidores conseguem comunicar entre si para poder avançar no projeto. Na \textbf{shell} de cada servidor foi feito um \textit{ping} para os restantes servidores para testar a conectividade.\\
+
+DD1: Conseguiu "\textit{pingar}" o servidor DD2 e DD3 e ainda o exterior (1.1.1.1).
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_33.png}
+\caption{Ping para DD2 e DD3}
+\end{figure}
+
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_23.png}
+\caption{Ping para o exterior}
+\end{figure}
+
+\newpage
+DD2: Conseguiu "\textit{pingar}" o servidor DD1 e DD3.
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_34.png}
+\caption{Ping para DD1 e DD3}
+\end{figure}
+
+DD3: Conseguiu "\textit{pingar}" o servidor DD1 e DD2.
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_35.png}
+\caption{Ping para DD1 e DD3}
+\end{figure}
+
+\newpage
+Por fim, o DD1 ainda conseguiu "\textit{pingar}" a segunda interface de rede de DD2 (192.168.1.130).
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_36.png}
+\caption{Ping para segunda interface de rede DD2}
+\end{figure}
+
+
+Devido à configuração que foi feita inicialmente do ficheiro "hosts" também testei, no servidor DD2, "\textit{pingar}" por nome o servidor DD1.
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_139.png}
+\caption{Ping para segunda interface de rede DD2}
+\end{figure}
+
+\newpage
+\section{Criação do Cluster}
+O cluster, como já referido, é o funcionamento em conjunto de várias \ac{VM}. Para isso passamos à criação e configuração do cluster em proxmox.\\
+
+Passo 1: Escolhi criar o cluster no servidor DD1 e os restantes apenas se conectavam ao cluster criado em DD1. O cluster é criado no \textbf{Datacenter}-\textbf{Cluster}-\textbf{Create Cluster}.
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_37.png}
+\caption{Cluster}
+\end{figure}
+
+Passo 2: Nesta passo vamos atribuir um nome ao cluster, no meu caso chamei \textbf{clusterTPB,} e atribuir um ou mais \ac{IP} para criar redundância. Inseri apenas o \ac{IP} da rede do cluster (\textbf{10.10.10.129}).
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_38.png}
+\caption{Create Cluster}
+\end{figure}
+
+\newpage
+De seguida podemos verificar alguns processos a serem iniciados, automaticamente, pelo proxmox, nomeadamente a configuração do \textit{corosync}. No final quando aparecer a informação de \textbf{TASK OK} podemos fechar a janela do \textit{Task Viewer} e o cluster está criado.
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_39.png}
+\caption{Create Cluster Task Viewer}
+\end{figure}
+
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_40.png}
+\caption{Cluster Nodes DD1}
+\end{figure}
+
+\newpage
+Um passo importante antes de adicionar os restantes nós ao cluster é copiar um conjunto de informações que se encontram em \textbf{Join Information} do nó criado (DD1). Apenas basta carregar em \textbf{Copy Information} e é selecionado e copiado automaticamente toda a informação.
+
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_41.png}
+\caption{Copy Information}
+\end{figure}
+
+Passo 3: No seguinte servidor, DD2, vamos novamente ao \textbf{Datacenter}-\textbf{Cluster} e agora não vamos criar um cluster porque já existe um. Vamos adicionar o nó DD2 ao cluster em DD1. Para isso precisamos de ir a \textbf{Join Cluster}.
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_42.png}
+\caption{Join Cluster}
+\end{figure}
+
+\newpage
+Passo 4: No campo \textbf{Information} é onde vai ser colado a informação copiada do cluster em DD1. \textbf{Peer Address} é o \ac{IP} de administração do servidor DD1, 192.168.1.129. \textbf{Cluster Network} atribuiu o \ac{IP} da rede do cluster de DD2, 10.10.10.130. Por último inserir uma \textbf{Password}.
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_43.png}
+\caption{Join Cluster}
+\end{figure}
+
+ No passo anterior depois de carregar em \textbf{Join ClusterTPB} podemos observar que no servidor DD2 já aparecem 2 nós, DD1 e DD2. Em DD1 também ja podems ver no \textbf{Datacenter} os nós do cluster.
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_44.png}
+\caption{Cluster Nodes DD2}
+\end{figure}
+
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_45.png}
+\caption{Cluster Nodes DD1}
+\end{figure}
+
+Para o cluster ficar completo, no servidor DD3 repetimos o passo 3 e 4 e obtemos o cluster com os 3 nós.
+
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_46.png}
+\caption{Cluster DD3}
+\end{figure}
+
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_47.png}
+\caption{Cluster Join}
+\end{figure}
+
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_48.png}
+\caption{Cluster Nodes DD3}
+\end{figure}
+
+\newpage
+Em DD1 também já podemos ver o cluster completo.
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_49.png}
+\caption{Cluster DD1}
+\end{figure}
+
+A partir de agora pode-se trabalhar apenas numa interface web de um servidor à escolha, eu usei sempre o DD1, 192.168.1.129. Como o cluster já esta completo a replicação já está a funcionar entre os nós, por isso o que for feito num nó será replicado entre os restantes.\\
+
+Por fim, podemos observar a configuração do ficheiro \textit{corosync}:
+
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_180.png}
+\caption{Configuração Corosync}
+\end{figure}
+
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_181.png}
+\caption{Configuração Corosync}
+\end{figure}
+
+Para observar algumas informações acerca do cluster, nodes, resources do Datacenter entre outros, podemos observar em \textbf{Datacenter}-\textbf{Summary}.
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_50.png}
+\caption{Datacenter Summary}
+\end{figure}
+
+
+\newpage
+\section{Ceph}
+
+Para criar o sistema de armazenamento distribuído passamos para a instalação e configuração do \textit{Ceph}.\\
+
+Passo 1: Instalação do \textit{Ceph} em cada "nó".
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_51.png}
+\caption{Instalação Ceph}
+\end{figure}
+
+Passo 2: A versão escolhida foi 16.2 (pacific). Existiam outras.
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_53.png}
+\caption{Versão do Ceph}
+\end{figure}
+
+\newpage
+Passo 3: Durante o processo de instalação vai ser preciso confirmar a continuação.
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_54.png}
+\caption{Continuação da instalação}
+\end{figure}
+
+Passo 4: Configuração do \textit{Ceph}.
+Em \textbf{Public Network} fica a rede que foi criada para separar o \textit{Cluster} da rede de "Administração": \textbf{10.10.10.129/24} e \textbf{Cluster Network} a rede da "Administração": \textbf{192.168.1.129/24}.
+Para terminar, no Monitor a escolha é \textbf{DD1}.
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_56.png}
+\caption{Configuração do \textit{Ceph}}
+\end{figure}
+
+\newpage
+Por último, a instalação e configuração fica finalizada.
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_57.png}
+\caption{Término da instalação}
+\end{figure}
+
+Podemos verificar que no "nó" DD1 foi criado o \textit{Monitor}.
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_60.png}
+\caption{Monitor DD1}
+\end{figure}
+
+\newpage
+Nos restantes "nós" temos de repetir os passos anteriores para cada um deles ficar com o \textit{Ceph}.
+Existe uma diferença na configuração e que não foi preciso configurar porque automaticamente é preenchida.
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_59.png}
+\caption{Configuração nos restantes nós}
+\end{figure}
+
+No "nó" DD2 podemos verificar que já existem os dois \textit{Monitor}.
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_62.png}
+\caption{Monitor DD2}
+\end{figure}
+
+\newpage
+Caso algum monitor não seja criado automaticamente com a instalação do \textit{Ceph}, é preciso adicionar manualmente. Para isso precisamos de ir a: \textbf{Ceph}-\textbf{Monitor}-\textbf{Create}. No meu caso foi o DD3.
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_64.png}
+\caption{Create Monitor DD3 Manualmente}
+\end{figure}
+
+Por último, podemos veirifcar que todos os "nós" possuem os vários \textit{Monitor}.
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_65.png}
+\caption{Monitor do Cluster}
+\end{figure}
+
+\newpage
+Podemos verificar o estado (\textit{Health}) do \textit{Ceph}. Neste momento vai indicar um \textit{WARNING} porque ainda não existem \ac{OSD} criados.
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_66.png}
+\caption{Configuração do \textit{Ceph}}
+\end{figure}
+
+\subsection{OSD}
+Cada \ac{OSD} faz a gestão de armazenamento de cada "nó" e para isso foi preciso criar de seguida um novo "disco" para associar a cada \ac{OSD}. Disco esse que vai ser replicado pelo \textit{Cluster}.
+
+Passo 1: Adicionar mais um \textit{Hard Disk} a cada servidor no \textit{VMWare}.
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_69.png}
+\caption{Adicionar Hard Disk}
+\end{figure}
+
+\newpage
+Passo 2: Escolha do tipo de Disco: \textbf{\ac{SCSI}}.
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_70.png}
+\caption{Escolha de Tipo de Disco}
+\end{figure}
+
+Passo 3: Por defeito escolhi \textbf{Create a new virtual disk}.
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_71.png}
+\caption{Create New vitual Disk}
+\end{figure}
+
+\newpage
+Passo 4: Capacidade do disco: 80Gb.
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_72.png}
+\caption{Capacidade do disco}
+\end{figure}
+
+Passo 5: Por defeito optei por deixar o nome do ficheiro \textit{vmdk} e finalizar.
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_73.png}
+\caption{Término da criação do novo disco}
+\end{figure}
+
+Nos restantes servidores é só repetir os passos anteriores para adicionar um novo disco ao servidor.
+
+\newpage
+Passo 6: Depois de adicionar um novo disco aos servidores, criei então o \ac{OSD} com o devido disco.
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_67.png}
+\caption{Create OSD}
+\end{figure}
+
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_74.png}
+\caption{Escolha do disco}
+\end{figure}
+
+\newpage
+Em DD1 e DD2 já podemos verificar o \ac{OSD} criado com o disco de 80Gb agregado.
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_75.png}
+\caption{OSD DD1}
+\end{figure}
+
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_76.png}
+\caption{OSD DD2}
+\end{figure}
+
+\newpage
+Para obter todos os \ac{OSD} no \textit{Cluster} apenas foi preciso repetir o passo 6.
+No final podemos observar que em DD1 e nos restantes "nós" existem os três \ac{OSD}.
+
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_78.png}
+\caption{OSD Cluster}
+\end{figure}
+
+Depois de ter adicionado um novo disco aos servidores e ter criado os \ac{OSD} podemos confirmar que o \textit{Ceph} está com boa "saúde". 
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_79.png}
+\caption{Health Ceph}
+\end{figure}
+
+\newpage
+\subsection{Pools}
+\textit{Pools} são partições lógicas usadas para armazenar objetos. Objetos esses que ficam armazenados no núcleo do \textit{Ceph}, \ac{RADOS}. Para criar a \textit{pool} de armazenamento apenas é preciso criar uma vez. Neste caso criei em DD1.\\
+
+Passo 1: Em \textbf{DD1}-\textbf{Ceph}-\textbf{Pools}-\textbf{Create}, criei a \textit{pool} indicando apenas um nome.
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_81.png}
+\caption{Pool Create}
+\end{figure}
+
+Como no \textit{Cluster} existem menos de 5 OSD, os \ac{PG} ficam definidos com o número de 128.\\
+
+Depois de ter criado a \textit{pool} de armazenamento podemos verificar que foi criada e replicada no \textit{cluster}.
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_82.png}
+\caption{Pool Create}
+\end{figure}
+
+\newpage
+De seguida, ao verificar a \textit{Health} do \textit{Ceph} podemos observar os \ac{PG} a 33.
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_84.png}
+\caption{Health Ceph}
+\end{figure}
+
+\newpage
+\section{Criação Máquina Virtual}
+Para testar a migração precisamos de criar uma máquina virtual/container. De seguida segue o registo do passo a passo da criação da máquina virtual.\\
+
+Passo 1: \textit{Upload} do ficheiro \textit{ISO}. Neste caso foi usado o Ubuntu Server 22.04.
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_110.png}
+\caption{Upload ISO}
+\end{figure}
+
+Depois da importação finalizada é esperado o "\textbf{TASK OK}".
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_111.png}
+\caption{Task Ok Upload}
+\end{figure}
+
+\newpage
+Passo 2: Depois de ter o ficheiro \textit{ISO} no servidor podemos criar a máquina virtual. \textbf{DD1}-\textbf{Create VM}.Em General:\\
+\textbf{Node}: "nó" onde colocar a \ac{VM};\\
+\textbf{VM ID}: um ID para a \ac{VM};\\
+\textbf{Name}: Nome da \ac{VM}.
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_112.png}
+\caption{Create Virtual Machine-General}
+\end{figure}
+
+Passo 3: Em OS:\\
+\textbf{Storage}: local;\\
+\textbf{ISO image}: escolher o ficheiro \textit{ISO} que foi importado para o servidor.\\
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_113.png}
+\caption{Create Virtual Machine-OS}
+\end{figure}
+
+\newpage
+Passo 4: Em Disks:\\
+\textbf{Storage}: poolceph, que foi a \textit{pool} criada anteriormente.
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_114.png}
+\caption{Create Virtual Machine-Disks}
+\end{figure}
+
+Passo 5: Em CPU:\\
+\textbf{Cores}: 2.
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_115.png}
+\caption{Create Virtual Machine-CPU}
+\end{figure}
+
+\newpage
+Passo 6: Em Memory:\\
+\textbf{Memory (MiB)}: 512.
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_116.png}
+\caption{Create Virtual Machine-Memory}
+\end{figure}
+
+Passo 6: Em Network:\\
+\textbf{Bridge}: vmbr0.
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_117.png}
+\caption{Create Virtual Machine-Network}
+\end{figure}
+
+Terminada a configuração da criação da máquina virtual, esta está logo pronta no "nó" para ser iniciada.
+Na consola da máquina virtual temos acesso ao \ac{SO}.
+
+\newpage
+O \ac{IP} atribuído à maquina virtual foi: \textbf{192.168.1.128}
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_119.png}
+\caption{Ifconfig Ubuntu Server}
+\end{figure}
+
+Existe conectividade com a máquina virtual:
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_120.png}
+\caption{Conectividade com a VM}
+\end{figure}
+
+\newpage
+\section{Experiência 1 - Migration Ceph}
+O \textit{Cluster} ainda não está totalmente configurado mas consegue-se fazer uma experiência simples com a migração da \ac{VM} já criada recorrendo à opção "\textit{Migrate}" existente no Proxmox para a \ac{VM}.\\
+\indent Para esta experiência fiz um \textit{ping} contínuo do \ac{PC} host para a máquina virtual:
+
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_122.png}
+\caption{Ping VM}
+\end{figure}
+
+Voltando a aceder à consola do Ubuntu Server no proxmox e recorrendo a opção \textbf{Migrate}, efetuei a migração da \ac{VM} de DD1 para DD2:
+
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_125.png}
+\caption{Migrate VM}
+\end{figure}
+
+\newpage
+Pode-se observar na \textit{Task View} o processo de migração a decorrer e ao mesmo tempo o \textit{Ping} a continuar em execução:
+
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_126.png}
+\caption{Migração em curso}
+\end{figure}
+
+Para terminar, pode-se observar que não houve, em momento algum, nenhuma interrupção no \textit{Ping} e a \ac{VM} foi migrada para DD2 com sucesso.
+
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_127.png}
+\caption{Ping}
+\end{figure}
+
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_128.png}
+\caption{Migração concluída}
+\end{figure}
+
+\newpage
+\section{HA}
+\ac{HA} refere-se ás características que são concebidas para assegurar que os dados permanecem acessíveis mesmo em caso de falha de um ou mais nós. Isto é conseguido através da utilização de múltiplas réplicas de dados, para que se uma réplica ficar indisponível, as outras ainda possam ser acedidas. Para evitar o \textit{failover} automático o \ac{HA} assegura que as \ac{VM} são restaurados noutros nós.\\
+
+Desta forma, e primeiro que tudo, é preciso criar um grupo \ac{HA} onde especificamos quais os nós pertencentes e a sua prioridade.
+Neste caso chamei ao grupo \ac{HA}: \textbf{groupHA} e a prioridade: \textbf{DD1:5}, \textbf{DD2:15} e \textbf{DD3:10}.
+
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_170.png}
+\caption{Group HA}
+\end{figure}
+
+
+Próximo passo é associar qual ou quais as máquinas (\ac{VM}) pertencentes ao \ac{HA}. Além da \ac{VM} que tinha criado juntei um \textit{container} Ubuntu Server 22.10.
+O \ac{HA} é configurado em \textbf{Datacenter}-\textbf{HA}-\textbf{ADD}.
+
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_129.png}
+\caption{Add HA}
+\end{figure}
+
+\newpage
+Adicionei a \ac{VM} 102 e o \textit{container} 101 ao \textbf{groupHA}. Tanto a \ac{VM} como o \textit{container} estavam em DD1 e assim que foram adicionadas ao \textbf{groupHA}, migraram automaticamente para DD2 devido à sua prioridade ser a mais elevada.
+
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_130.png}
+\caption{Resources HA}
+\end{figure}
+
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_131.png}
+\caption{Resources HA}
+\end{figure}
+
+\newpage
+Por fim podemos verificar o Grupo \ac{HA} com a \ac{VM} e o \textit{container}.
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_133.png}
+\caption{Resources HA}
+\end{figure}
+
+\newpage
+\section{Experiência 2 - High Availability/Automatic Failover}
+Para tornar este projeto mais interessante e antes de passar para a experiência 2, implementei um Website muito simples e uma ferramenta de monitorização (Uptime Kuma) onde adicionei à Dashboard os vários servidores.
+
+Utilizei um servidor HTTP Apache para o Website (\ac{HTML} e \ac{CSS}) e \textit{docker} para o Uptime Kuma. O projeto Uptime Kuma pode ser consultado em  \href{https://github.com/louislam/uptime-kuma}{Uptime Kuma}
+
+ A implementação destas duas funcionalidades foram feitas no \textit{container} com o \ac{IP} 192.168.1.140.\\
+
+ Website da experiência:
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_153.png}
+\caption{Website}
+\end{figure}
+
+Uptime Kuma:
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_185.png}
+\caption{Dashboard Uptime Kuma}
+\end{figure}
+
+\newpage
+Com esta experiência quis mostrar não só a disponibilidade entre o \textit{Cluster} mas também a disponibilidade dos serviços contidos nas \ac{VM}/\textit{container}.
+
+Para dar início à experiência 2 a \ac{VM} e o \textit{container} encontravam-se em DD2 (prioridade 15) e do \ac{PC} Host fiz um \textit{ping} contínuo para o \textit{container} 192.168.1.140.
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_154.png}
+\caption{Ping para Container}
+\end{figure}
+
+De seguida a falha injetada no \textit{Cluster} foi desligar o servidor proxmox DD2.
+Passado segundos foi possível ver as máquinas a serem migradas para DD3 (prioridade 10 enquanto DD1 tinha prioridade 5) e a continuidade do ping. O ping pode-se observar que houve uns segundos que dizia \textit{Destination Host Unreachable}. Foi muito rápido e normal devido à migração de nó.
+
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_155.png}
+\caption{Migração}
+\end{figure}
+
+\newpage
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_156.png}
+\caption{Migração Concluída}
+\end{figure}
+
+No final do ping pode-se observar que apenas se perderam 2 pacotes.\\
+
+Durante a migração, que foi em poucos segundos, em momento algum o Website ficou \textit{Down}. Manteve-se sempre ativo.
+
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_153.png}
+\caption{Website online}
+\end{figure}
+
+\newpage
+Ao injetar a falha no \textit{Cluster} fui informado por \textit{email} acerca do \textit{Overall} do cluster.
+
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_200.png}
+\caption{Overall Cluster}
+\end{figure}
+
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_201.png}
+\caption{Overall Cluster}
+\end{figure}
+
+Depois de configurar a Dashboard, Uptime Kuma, com os servidores pretendidos, esperei um tempo para tudo ficar normalizado e só depois injetei a falha no \textit{Cluster} em DD2. O resultado final foi o seguinte e podemos ver a disponibilidade de cada servidor:
+
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_188.png}
+\caption{Dashboard Uptime Kuma}
+\end{figure}
+
+\begin{figure}[H]
+\center
+\includegraphics[width=14cm]{Screenshot_194.png}
+\caption{Dashboard Uptime Kuma}
+\end{figure}

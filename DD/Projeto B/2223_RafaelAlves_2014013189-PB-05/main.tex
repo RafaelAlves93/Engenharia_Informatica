@@ -1,0 +1,89 @@
+%---------------------------------------------
+% RAFAEL FILIPE MARTINS ALVES 2014013189
+%---------------------------------------------
+
+\documentclass[a4paper,12pt]{report}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc} 
+\usepackage{csquotes}
+\usepackage[portuguese]{babel}
+\usepackage[printonlyused]{acronym}
+\usepackage{hyperref} %didelinks
+\usepackage[pdftex]{graphicx}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{biblatex}
+\usepackage{indentfirst}
+\usepackage{appendix}
+\usepackage{amsmath}
+\usepackage{acronym}
+\usepackage[top=12mm,bottom=20mm]{geometry} %width=150mm
+
+
+\graphicspath{{./imagens}}
+\thispagestyle{empty}
+
+
+\def\data{Janeiro de 2023}
+
+
+\begin{document}
+    \begin{titlepage}
+    	\begin{center}
+    		\includegraphics[width=0.6\textwidth]{logo_isec.png}
+    		\large\textsc{
+				   \\Instituto Superior de Engenharia de Coimbra\\
+				   Licenciatura em Engenharia Informática\\
+				   Ramo de Redes e Administração de Sistemas
+	            }
+    		
+    		\vspace{3cm}
+    		%\vspace*{\fill}
+    		\huge
+    		\textbf{Disponibilidade e Desempenho}
+    		\vspace{1.5cm}
+    		
+    		\huge
+    		\textbf{Proxmox Availability and Failover}
+    		
+    		\vspace{2cm}
+    		\textbf{Rafael Alves - 2014013189}
+    		
+    		\vfill
+    		a21240485@isec.pt
+    		
+    		\vspace*{\fill}
+    		\normalsize
+            \data
+    	\end{center}
+    \end{titlepage}
+
+
+%\pagenumbering{gobble} %sem numero pagina
+\pagenumbering{roman}
+\tableofcontents
+\listoftables
+\listoffigures
+
+%\include{chapters/acronyms}
+\input{chapters/acronyms}
+
+
+%-----------------------------------------------
+\clearpage
+\pagenumbering{arabic}
+%-----------------------------------------------
+
+\chapter{Introdução}
+\input{chapters/intro}
+
+\chapter{Tecnologias Usadas}
+\input{chapters/chapter2.tex}
+
+\chapter{Arquitetura para as experiências}
+\input{chapters/chapter3.tex}
+
+\chapter{Trabalho Desenvolvido}
+\input{chapters/chapter4.tex}
+
+\end{document}

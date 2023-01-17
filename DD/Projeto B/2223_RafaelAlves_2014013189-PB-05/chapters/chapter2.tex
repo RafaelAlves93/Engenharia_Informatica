@@ -1,0 +1,26 @@
+\section{Proxmox}
+Proxmox VE (\ac{PVE}) é um sistema de gestão de \ac{VM} e container (CT) baseado em Linux. Permite criar e gerir \ac{VM} e container em um único \textit{host} ou em um \textit{cluster} de múltiplos \textit{hosts}. O Proxmox é uma solução de virtualização completa para criar e gerir \ac{VM} e containeres, incluindo um sistema de gestão de \textit{cluster}, armazenamento partilhado, \textit{backup} e recuperação de desastres e muito mais.
+
+O Proxmox é baseado no Kernel Linux e suporta vários \ac{SO}, incluindo Linux, Windows e muitos outros. Também inclui uma interface gráfica intuitiva que permite toda a gestão do servidor. 
+
+\section{Cluster de Alta Disponibilidade}
+Um cluster de alta disponibilidade \ac{HA} é um conjunto de máquinas que trabalham em conjunto para fornecer um serviço de alta disponibilidade \ac{HA}. Isso significa que, se uma das máquinas falhar ou ficar indisponível por qualquer motivo, outra máquina no cluster pode assumir o trabalho sem interrupção do serviço. Dessa forma, um cluster de alta disponibilidade \ac{HA} garante que um serviço esteja sempre disponível para os utilizadores, mesmo em caso de falhas.
+
+Existem várias maneiras de implementar um cluster de alta disponibilidade \ac{HA}, mas a maioria das soluções envolve a utilização de dois ou mais nós, cada um com os seus próprios recursos de hardware e software. Cada nó pode ser responsável por executar um serviço ou um conjunto de serviços, e os nós são interligados por uma rede de comunicação para permitir que eles se comuniquem e tomem decisões sobre o estado atual do cluster.
+
+Para gerir um cluster de alta disponibilidade \ac{HA}, é necessário um software de gestão, como o \textit{Corosync} ou o \textit{Pacemaker}. Este software monitora o estado dos nós e dos serviços no cluster e toma as medidas adequadas em caso de falhas, como transferir os serviços para outro nó ou reiniciá-los num nó que esteja a funcionar corretamente.
+
+\section{Corosync}
+Corosync é um software de alta disponibilidade \ac{HA} que fornece um mecanismo de comunicação confiável para sistemas de alta disponibilidade \ac{HA}. É projetado para permitir que os serviços de alta disponibilidade \ac{HA} comuniquem entre si e tomem decisões sobre o estado atual do sistema e quais ações devem ser tomadas em caso de falhas.
+
+Corosync usa um protocolo de mensagem chamado "\textit{Virtual Synchrony}" para garantir que as mensagens são entregues de forma confiável entre os nós de um cluster de alta disponibilidade \ac{HA}.
+
+\section{Ceph}
+\textit{Ceph} é um sistema de armazenamento distribuído (\textit{open-source}) que foi desenvolvido para fornecer alta disponibilidade \ac{HA}, escalabilidade e capacidade de armazenamento. Ele usa um conjunto de máquinas ("nós") para criar uma "\textit{pool}" de armazenamento partilhado que é acessível por meio de uma variedade de protocolos de armazenamento, incluindo o Protocolo de Armazenamento em Blocos (RBD), o Protocolo de Armazenamento em Arquivo (RGW) e o Protocolo de Armazenamento em Objetos (RADOS).
+
+O \textit{Ceph} é projetado para ser escalável e pode ser facilmente expandido adicionando mais nós à sua rede. Também é capaz de tolerar falhas de hardware e oferece alta disponibilidade \ac{HA}, pois os dados são replicados em vários nós para garantir que eles estejam sempre disponíveis. Além disso, o Ceph suporta uma variedade de usos, incluindo armazenamento em \textit{cloud}, backup e recuperação de desastres, armazenamento de arquivos e muito mais.
+
+
+
+
+
