@@ -21,11 +21,11 @@ ou  ls -l /bin/ | tr -s " " | cut -d " " -f5 | sort -n -r | head -n 7
 19) echo "estás a usar $(uname). Muito bem"
 20) ls /home/$(echo $USER) | wc -l
 21) 
-22) 
+22) ls -l  /usr/bin /usr/sbin | cut -d “ “ -f1 | grep s | sort | head -n -2 | wc -l
 23) 
 24) 
 25) ls -l ~ | tr -s " "| sort -t " " -k3 | head -n 4 | tail -n 3
-26) 
+26) ls -l /usr/bin | tr -s “ “ | cut -d “ “ -f1,5 | grep x | head -n 15 | tail -n 5 | cut -d “ “  -f2
 27) 
 28) 
 29) 
