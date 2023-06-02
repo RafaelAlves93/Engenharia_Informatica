@@ -1,0 +1,12 @@
+Joao C. Silva   
+2 3 6 8 10 34 
+Ana Lima Nunes   
+4 10 23 30 31 38 
+Antunes Silvestre  
+3 12 34 45 42 43
+Filipa Branco
+3 12 34 45 69 70
+Joel Vasco
+3 12 34 45 54 89
+Miguel Lourenco
+12 22 34 54 56 78

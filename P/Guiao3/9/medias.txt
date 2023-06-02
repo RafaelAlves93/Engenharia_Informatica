@@ -1,0 +1,6 @@
+Aluno 1: 68
+Aluno 2: 46
+Aluno 3: 50
+Aluno 4: 34
+Aluno 5: 68
+Aluno 6: 27
