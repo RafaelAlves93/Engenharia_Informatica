@@ -1,0 +1,4 @@
+SCoelho 5
+SOvelha 30
+SLobo 25
+SCanguru 20
