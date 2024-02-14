@@ -6,4 +6,4 @@
 
 ## Meta 2: 77
 
-## Nota Final: 77.5
+## Nota Final: 75.5
