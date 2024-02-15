@@ -44,7 +44,7 @@ int _tmain(int argc, LPTSTR argv[]) {
     //Aguarda ate que o filho termine
     WaitForSingleObject(pi.hProcess, INFINITE);
     GetExitCodeProcess(pi.hProcess, &valor);
-    _tprintf_s(_T("Sou o %d, o meu filho %d terminou %d\n"), GetCurrentProcessId(), valor, pi.dwProcessId);
+    _tprintf_s(_T("Sou o %d, o meu filho %d terminou %d\n"), GetCurrentProcessId(), pi.dwProcessId, valor);
     
     ExitProcess(0);
 }
