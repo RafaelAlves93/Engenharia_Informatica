@@ -9,4 +9,4 @@
 - [x] Disponibilidade e Desempenho
 - [x] Tecnologias de Ligação
 - [x] Gestão de Redes
-- [ ] Sistemas Operativos II
+- [x] Sistemas Operativos II
