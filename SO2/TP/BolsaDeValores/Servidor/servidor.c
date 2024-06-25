@@ -7,7 +7,7 @@ typedef struct {
     BOOL continua;
     HANDLE hEvEmpresas;
     SDATA* shm;
-    BOOL pause;         //Vari·vel para verificar pause
+    BOOL pause;         //Vari√°vel para verificar pause
 } TDATA;
 
 typedef struct {
@@ -38,10 +38,10 @@ int PauseCommand(LPVOID param, DWORD segundos) {
         return 1;
     }
 
-    _tprintf_s(_T("OperaÁıes suspensas por %ld segundos...\n"), segundos);
+    _tprintf_s(_T("Opera√ß√µes suspensas por %ld segundos...\n"), segundos);
     WaitForSingleObject(hTimer, INFINITE);
 
-    _tprintf_s(_T("Tempo de pausa expirado! OperaÁıes retomadas!\n"));
+    _tprintf_s(_T("Tempo de pausa expirado! Opera√ß√µes retomadas!\n"));
     td->pause = FALSE;
     CloseHandle(hTimer);
 
@@ -64,11 +64,11 @@ DWORD WINAPI Input(LPVOID data) {
         if (_tcscmp(cmd, _T("users")) == 0) {
             for (int i = 0; i < td->clientes->numUtilizadores; ++i) {
                 if (td->clientes->utilizadores[i].ligado == 1) {
-                    _tprintf_s(_T("Cliente: %s, Saldo: %.2fÄ, Online\n"), td->clientes->utilizadores[i].username,
+                    _tprintf_s(_T("Cliente: %s, Saldo: %.2f‚Ç¨, Online\n"), td->clientes->utilizadores[i].username,
                         td->clientes->utilizadores[i].saldo);
                 }
                 else {
-                    _tprintf_s(_T("Cliente: %s, Saldo: %.2fÄ, Offline\n"), td->clientes->utilizadores[i].username,
+                    _tprintf_s(_T("Cliente: %s, Saldo: %.2f‚Ç¨, Offline\n"), td->clientes->utilizadores[i].username,
                         td->clientes->utilizadores[i].saldo);
                 }
             }
@@ -78,7 +78,7 @@ DWORD WINAPI Input(LPVOID data) {
             if (inicializaEmpresas(td->mercado, nome_fich)) {
                 _tprintf_s(_T("Empresas inseridas com sucesso! Total de empresas:%d\n"), td->mercado->numEmpresas);
                 for (DWORD i = 0; i < td->mercado->numEmpresas; i++) {
-                    _tprintf_s(_T("Empresa: %s, AÁıes DisponÌveis: %d, PreÁo: %.2fÄ\n"),
+                    _tprintf_s(_T("Empresa: %s, A√ß√µes Dispon√≠veis: %d, Pre√ßo: %.2f‚Ç¨\n"),
                         td->mercado->empresas[i].nome,
                         td->mercado->empresas[i].AcoesDisponiveis,
                         td->mercado->empresas[i].preco);
@@ -97,7 +97,7 @@ DWORD WINAPI Input(LPVOID data) {
             if (swscanf_s(cmd, _T("addc %49s %d %f"), aux.nome, (unsigned)_countof(aux.nome),
                 &aux.AcoesDisponiveis, &aux.preco) == 3) {
                 BOOL nomeExiste = FALSE;
-                //VERIFICA SE J¡ EXISTE UMA EMPRESA COM O MESMO NOME
+                //VERIFICA SE J√Å EXISTE UMA EMPRESA COM O MESMO NOME
                 for (int i = 0; i < nEmpresas; ++i) {
                     if (_tcscmp(td->mercado->empresas[i].nome, aux.nome) == 0) {
                         nomeExiste = TRUE;
@@ -105,7 +105,7 @@ DWORD WINAPI Input(LPVOID data) {
                     }
                 }
                 if (nomeExiste) {
-                    _tprintf_s(_T("J· existe uma empresa com o mesmo nome!\n"));
+                    _tprintf_s(_T("J√° existe uma empresa com o mesmo nome!\n"));
                 }
                 else {
                     CopyMemory(&(td->mercado->empresas[nEmpresas]), &aux, sizeof(Empresa));
@@ -117,25 +117,25 @@ DWORD WINAPI Input(LPVOID data) {
                 }
             }
             else {
-                _tprintf_s(_T("N˙mero de par‚metros incorreto!\n"));
+                _tprintf_s(_T("N√∫mero de par√¢metros incorreto!\n"));
             }
         }
         else if (_tcscmp(cmd, _T("listc")) == 0) {
             nEmpresas = td->mercado->numEmpresas;
             if (nEmpresas > 0) {
                 for (DWORD i = 0; i < nEmpresas; ++i) {
-                    _tprintf_s(_T("Nome: %s, Numero de AÁıes: %d, PreÁo: %.2fÄ\n"), td->mercado->empresas[i].nome,
+                    _tprintf_s(_T("Nome: %s, Numero de A√ß√µes: %d, Pre√ßo: %.2f‚Ç¨\n"), td->mercado->empresas[i].nome,
                         td->mercado->empresas[i].AcoesDisponiveis, td->mercado->empresas[i].preco);
                 }
             }
             else {
-                _tprintf_s(_T("N„o existem empresas disponiveis!\n"));
+                _tprintf_s(_T("N√£o existem empresas disponiveis!\n"));
             }
         }
         else if (wcsstr(cmd, _T("stock")) != NULL) {
             nEmpresas = td->mercado->numEmpresas;
             if (nEmpresas == 0) {
-                _tprintf_s(_T("N„o existem empresas disponiveis!\n"));
+                _tprintf_s(_T("N√£o existem empresas disponiveis!\n"));
             }
             else {
                 if (swscanf_s(cmd, _T("stock %49s %f"), aux.nome, (unsigned)_countof(aux.nome), &aux.preco) == 2) {
@@ -148,7 +148,7 @@ DWORD WINAPI Input(LPVOID data) {
                     }
                 }
                 else {
-                    _tprintf_s(_T("N˙mero de par‚metros incorreto!\n"));
+                    _tprintf_s(_T("N√∫mero de par√¢metros incorreto!\n"));
                 }
             }
         }
@@ -158,16 +158,15 @@ DWORD WINAPI Input(LPVOID data) {
                 PauseCommand(td, segundos);
             }
             else {
-                _tprintf_s(_T("N˙mero de par‚metros incorretos!\n"));
+                _tprintf_s(_T("N√∫mero de par√¢metros incorretos!\n"));
             }
         }
         else {
-            _tprintf_s(_T("[SERVIDOR] Comando inv·lido!\n"));
+            _tprintf_s(_T("[SERVIDOR] Comando inv√°lido!\n"));
         }
     } while (_tcscmp(cmd, _T("close")) != 0);
 
     td->continua = FALSE;
-    CreateFile(NOME_PIPE, GENERIC_READ, 0, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
     return 0;
 }
 
@@ -194,7 +193,7 @@ DWORD WINAPI AtendeCliente(LPVOID data) {
     hPipe = te->hPipe[id];
     ReleaseMutex(te->hMutex);
 
-    _tprintf_s(_T("[SERVIDOR] ¿ espera de dados do cliente [%d]...\n"), id);
+    _tprintf_s(_T("[SERVIDOR] √Ä espera de dados do cliente [%d]...\n"), id);
     while (te->Share->continua) {
         flag_utilizadores = 0;
         flag_empresas = 0;
@@ -228,7 +227,7 @@ DWORD WINAPI AtendeCliente(LPVOID data) {
                             _tprintf_s(_T("Escrevi no pipe\n"));
                         }
                         else {
-                            _tcscpy_s(buf, sizeof(buf) / sizeof(TCHAR), _T("Utilizador j· se encontra autenticado!"));
+                            _tcscpy_s(buf, sizeof(buf) / sizeof(TCHAR), _T("Utilizador j√° se encontra autenticado!"));
                             if (!WriteFile(hPipe, buf, (DWORD)_tcslen(buf) * sizeof(TCHAR), &nbytes, NULL)) {
                                 _tprintf_s(_T("[ERRO] Escrita no pipe!\n"));
                                 exit(-1);
@@ -246,7 +245,7 @@ DWORD WINAPI AtendeCliente(LPVOID data) {
 
             }
             else {
-                _tcscpy_s(buf, sizeof(buf) / sizeof(TCHAR), _T("N˙mero de par‚metros incorreto!"));
+                _tcscpy_s(buf, sizeof(buf) / sizeof(TCHAR), _T("N√∫mero de par√¢metros incorreto!"));
                 if (!WriteFile(hPipe, buf, (DWORD)_tcslen(buf) * sizeof(TCHAR), &nbytes, NULL)) {
                     _tprintf_s(_T("[ERRO] Escrita no pipe!\n"));
                     exit(-1);
@@ -263,7 +262,7 @@ DWORD WINAPI AtendeCliente(LPVOID data) {
                     if (te->Share->mercado->numEmpresas > 0) {
                         for (int i = 0; i < te->Share->mercado->numEmpresas; ++i) {
                             auxe = te->Share->mercado->empresas[i];
-                            swprintf_s(conc, 256, _T("Nome: %s | AÁıes DisponÌveis: %d | PreÁo: %.2f\n"),
+                            swprintf_s(conc, 256, _T("Nome: %s | A√ß√µes Dispon√≠veis: %d | Pre√ßo: %.2f\n"),
                                 auxe.nome, auxe.AcoesDisponiveis, auxe.preco);
                             wcscat_s(buf, sizeof(buf) / sizeof(TCHAR), conc);
                         }
@@ -274,7 +273,7 @@ DWORD WINAPI AtendeCliente(LPVOID data) {
                         break;
                     }
                     else {
-                        _tcscpy_s(buf, sizeof(buf) / sizeof(TCHAR), _T("N„o existem empresas na bolsa!\n"));
+                        _tcscpy_s(buf, sizeof(buf) / sizeof(TCHAR), _T("N√£o existem empresas na bolsa!\n"));
                         if (!WriteFile(hPipe, buf, (DWORD)_tcslen(buf) * sizeof(TCHAR), &nbytes, NULL)) {
                             _tprintf_s(_T("[ERRO] Escrita no pipe!\n"));
                             exit(-1);
@@ -362,7 +361,7 @@ DWORD WINAPI AtendeCliente(LPVOID data) {
                                                     SetEvent(te->hEvOperacoes);
                                                     break;
                                                 }
-                                                //SE A EMPRESA N√O EXISTIR NA CARTEIRA E ESTA TER ESPA«O
+                                                //SE A EMPRESA N√ÉO EXISTIR NA CARTEIRA E ESTA TER ESPA√áO
                                                 if (_tcscmp(auxe.nome, auxu.carteira[n].empresa) != 0 && i + 1 == auxu.nCarteira) {
                                                     _tcscpy_s(te->Share->clientes->utilizadores[j].carteira[auxu.nCarteira].empresa, sizeof(auxu.carteira[auxu.nCarteira].empresa) / sizeof(TCHAR), nome_empresa);
                                                     te->Share->clientes->utilizadores[j].carteira[auxu.nCarteira].nAcoes = acoescompra;
@@ -392,7 +391,7 @@ DWORD WINAPI AtendeCliente(LPVOID data) {
                                         }
                                     }
                                     else {
-                                        _tcscpy_s(buf, sizeof(buf) / sizeof(TCHAR), _T("Saldo IndisponÌvel"));
+                                        _tcscpy_s(buf, sizeof(buf) / sizeof(TCHAR), _T("Saldo Indispon√≠vel"));
                                         if (!WriteFile(hPipe, buf, (DWORD)_tcslen(buf) * sizeof(TCHAR), &nbytes, NULL)) {
                                             _tprintf_s(_T("[ERRO] Escrita no pipe!\n"));
                                             exit(-1);
@@ -400,7 +399,7 @@ DWORD WINAPI AtendeCliente(LPVOID data) {
                                     }
                                 }
                             }
-                            //SE CLIENTE N√O FOR ENCONTRADO OU SE N√O ESTIVER AUTENTICADO
+                            //SE CLIENTE N√ÉO FOR ENCONTRADO OU SE N√ÉO ESTIVER AUTENTICADO
                             if (flag_utilizadores == 0) {
                                 _tcscpy_s(buf, sizeof(buf) / sizeof(TCHAR), _T("Acesso Negado!\n"));
                                 if (!WriteFile(hPipe, buf, (DWORD)_tcslen(buf) * sizeof(TCHAR), &nbytes, NULL)) {
@@ -410,7 +409,7 @@ DWORD WINAPI AtendeCliente(LPVOID data) {
                             }
                         }
                         else {
-                            _tcscpy_s(buf, sizeof(buf) / sizeof(TCHAR), _T("N˙mero de AÁıes indisponÌvel!"));
+                            _tcscpy_s(buf, sizeof(buf) / sizeof(TCHAR), _T("N√∫mero de A√ß√µes indispon√≠vel!"));
                             if (!WriteFile(hPipe, buf, (DWORD)_tcslen(buf) * sizeof(TCHAR), &nbytes, NULL)) {
                                 _tprintf_s(_T("[ERRO] Escrita no pipe!\n"));
                                 exit(-1);
@@ -418,9 +417,9 @@ DWORD WINAPI AtendeCliente(LPVOID data) {
                         }
                     }
                 }
-                //SE N√O ENCONTRAR EMPRESA
+                //SE N√ÉO ENCONTRAR EMPRESA
                 if (flag_empresas == 0) {
-                    _tcscpy_s(buf, sizeof(buf) / sizeof(TCHAR), _T("Empresa N„o Encontrada"));
+                    _tcscpy_s(buf, sizeof(buf) / sizeof(TCHAR), _T("Empresa N√£o Encontrada"));
                     if (!WriteFile(hPipe, buf, (DWORD)_tcslen(buf) * sizeof(TCHAR), &nbytes, NULL)) {
                         _tprintf_s(_T("[ERRO] Escrita no pipe!\n"));
                         exit(-1);
@@ -428,16 +427,16 @@ DWORD WINAPI AtendeCliente(LPVOID data) {
                 }
             }
             else {
-                _tcscpy_s(buf, sizeof(buf) / sizeof(TCHAR), _T("N˙mero de par‚metros incorreto!"));
+                _tcscpy_s(buf, sizeof(buf) / sizeof(TCHAR), _T("N√∫mero de par√¢metros incorreto!"));
                 if (!WriteFile(hPipe, buf, (DWORD)_tcslen(buf) * sizeof(TCHAR), &nbytes, NULL)) {
                     _tprintf_s(_T("[ERRO] Escrita no pipe!\n"));
                     exit(-1);
                 }
             }
         }
-        // OperaÁ„o em pause
+        // Opera√ß√£o em pause
         else if (wcsstr(buf, _T("buy")) != NULL && te->Share->pause == TRUE) {
-            _tcscpy_s(buf, sizeof(buf) / sizeof(TCHAR), _T("OperaÁıes suspensas!"));
+            _tcscpy_s(buf, sizeof(buf) / sizeof(TCHAR), _T("Opera√ß√µes suspensas!"));
             if (!WriteFile(hPipe, buf, (DWORD)_tcslen(buf) * sizeof(TCHAR), &nbytes, NULL)) {
                 exit(-1);
             }
@@ -451,7 +450,7 @@ DWORD WINAPI AtendeCliente(LPVOID data) {
                     if (auxu.id_cliente == id && auxu.ligado == 1) {
                         flag_utilizadores = 1;
                         if (auxu.nCarteira == 0) {
-                            _tcscpy_s(buf, sizeof(buf) / sizeof(TCHAR), _T("N„o Possui AÁıes!"));
+                            _tcscpy_s(buf, sizeof(buf) / sizeof(TCHAR), _T("N√£o Possui A√ß√µes!"));
                             if (!WriteFile(hPipe, buf, (DWORD)_tcslen(buf) * sizeof(TCHAR), &nbytes, NULL)) {
                                 _tprintf_s(_T("[ERRO] Escrita no pipe!\n"));
                                 exit(-1);
@@ -481,7 +480,7 @@ DWORD WINAPI AtendeCliente(LPVOID data) {
                                 }
                             }
                             else if (_tcscmp(auxu.carteira[i].empresa, nome_empresa) == 0 && auxu.carteira[i].nAcoes < acoesvenda) {
-                                _tcscpy_s(buf, sizeof(buf) / sizeof(TCHAR), _T("N„o possui aÁıes suficientes!"));
+                                _tcscpy_s(buf, sizeof(buf) / sizeof(TCHAR), _T("N√£o possui a√ß√µes suficientes!"));
                                 if (!WriteFile(hPipe, buf, (DWORD)_tcslen(buf) * sizeof(TCHAR), &nbytes, NULL)) {
                                     _tprintf_s(_T("[ERRO] Escrita no pipe!\n"));
                                     exit(-1);
@@ -490,7 +489,7 @@ DWORD WINAPI AtendeCliente(LPVOID data) {
                             }
                         }
                         if (flag_empresas == 0) {
-                            _tcscpy_s(buf, sizeof(buf) / sizeof(TCHAR), _T("Empresa N„o Encontrada!\n"));
+                            _tcscpy_s(buf, sizeof(buf) / sizeof(TCHAR), _T("Empresa N√£o Encontrada!\n"));
                             if (!WriteFile(hPipe, buf, (DWORD)_tcslen(buf) * sizeof(TCHAR), &nbytes, NULL)) {
                                 _tprintf_s(_T("[ERRO] Escrita no pipe!\n"));
                                 exit(-1);
@@ -509,16 +508,16 @@ DWORD WINAPI AtendeCliente(LPVOID data) {
 
             }
             else {
-                _tcscpy_s(buf, sizeof(buf) / sizeof(TCHAR), _T("N˙mero de par‚metros incorreto!"));
+                _tcscpy_s(buf, sizeof(buf) / sizeof(TCHAR), _T("N√∫mero de par√¢metros incorreto!"));
                 if (!WriteFile(hPipe, buf, (DWORD)_tcslen(buf) * sizeof(TCHAR), &nbytes, NULL)) {
                     _tprintf_s(_T("[ERRO] Escrita no pipe!\n"));
                     exit(-1);
                 }
             }
         }
-        // OperaÁ„o em pause
+        // Opera√ß√£o em pause
         else if (wcsstr(buf, _T("sell")) != NULL && te->Share->pause == TRUE) {
-            _tcscpy_s(buf, sizeof(buf) / sizeof(TCHAR), _T("OperaÁıes suspensas!"));
+            _tcscpy_s(buf, sizeof(buf) / sizeof(TCHAR), _T("Opera√ß√µes suspensas!"));
             if (!WriteFile(hPipe, buf, (DWORD)_tcslen(buf) * sizeof(TCHAR), &nbytes, NULL)) {
                 exit(-1);
             }
@@ -542,7 +541,7 @@ DWORD WINAPI AtendeCliente(LPVOID data) {
             break;
         }
         else {
-            _tcscpy_s(buf, sizeof(buf) / sizeof(TCHAR), _T("Comando Inv·lido"));
+            _tcscpy_s(buf, sizeof(buf) / sizeof(TCHAR), _T("Comando Inv√°lido"));
             if (!WriteFile(hPipe, buf, (DWORD)_tcslen(buf) * sizeof(TCHAR), &nbytes, NULL)) {
                 _tprintf_s(_T("[ERRO] Escrita no pipe!\n"));
                 exit(-1);
@@ -572,11 +571,11 @@ BOOL inicializaServidor(Controlo* dados) {
 
     //Verificar se o mutex ja existe
     if (GetLastError() == ERROR_ALREADY_EXISTS) {
-        _tprintf_s(_T("[SERVIDOR] J· existe uma inst‚ncia do servidor em execuÁ„o.\n"));
+        _tprintf_s(_T("[SERVIDOR] J√° existe uma inst√¢ncia do servidor em execu√ß√£o.\n"));
         CloseHandle(dados->hMutex);
         return FALSE;
     }
-    //N„o h· outra inst‚ncia do servidor em execuÁ„o
+    //N√£o h√° outra inst√¢ncia do servidor em execu√ß√£o
     return TRUE;
 }
 
@@ -653,7 +652,7 @@ BOOL inicializaEmpresas(Mercado* pe, TCHAR* nome_fich) {
     while (fwscanf_s(fich, _T("%49s %d %f"), aux.nome, (unsigned)_countof(aux.nome), &aux.AcoesDisponiveis, &aux.preco) == 3) {
         // Verificar se o nome contem apenas uma palavra
         if (_tcschr(aux.nome, _T(' ')) != NULL) {
-            _tprintf(_T("[ERRO] Nome da empresa inv·lido: %s\n"), aux.nome);
+            _tprintf(_T("[ERRO] Nome da empresa inv√°lido: %s\n"), aux.nome);
             continue;
         }
         // Verificar se ja existe uma empresa com o mesmo nome
@@ -665,14 +664,14 @@ BOOL inicializaEmpresas(Mercado* pe, TCHAR* nome_fich) {
                 break;
             }
         }
-        // Adicionar a empresa se n„o for duplicada e se n„o ultrapassar o limite
+        // Adicionar a empresa se n√£o for duplicada e se n√£o ultrapassar o limite
         if (!existe) {
             if (nEmpresas >= MAX_EMPRESAS) {
-                _tprintf(_T("[ERRO] Limite m·ximo de empresas atingido: %d\n"), MAX_EMPRESAS);
+                _tprintf(_T("[ERRO] Limite m√°ximo de empresas atingido: %d\n"), MAX_EMPRESAS);
                 fclose(fich);
                 return FALSE;
             }
-            CopyMemory(&(pe->empresas[nEmpresas]), &aux, sizeof(Empresa));    //nEmpresas È a posiÁao do array onde vai ser inserida a empresa
+            CopyMemory(&(pe->empresas[nEmpresas]), &aux, sizeof(Empresa));    //nEmpresas √© a posi√ßao do array onde vai ser inserida a empresa
             nEmpresas++;
         }
     }
@@ -701,7 +700,7 @@ int _tmain(int argc, LPTSTR argv[]) {
     r = _setmode(_fileno(stderr), _O_WTEXT);
 #endif
 
-    //Verifica se outra instancia do servidor esta em execuÁ„o
+    //Verifica se outra instancia do servidor esta em execu√ß√£o
     if (!inicializaServidor(&dados_servidor)) {
         return 1;
     }
@@ -719,13 +718,13 @@ int _tmain(int argc, LPTSTR argv[]) {
     //-------------------------------------------------MEMORIA PARTILHADA-------------------------------------------
     HANDLE hMapFile = CreateFileMapping(INVALID_HANDLE_VALUE, NULL, PAGE_READWRITE, 0, MAX_EMPRESAS * sizeof(SDATA), NOME_MEMORIA_PARTILHADA);
     if (hMapFile == NULL) {
-        _tprintf_s(_T("Erro ao criar o arquivo de mapeamento da memÛria partilhada: %d\n"), GetLastError());
+        _tprintf_s(_T("Erro ao criar o arquivo de mapeamento da mem√≥ria partilhada: %d\n"), GetLastError());
         return 1;
     }
 
     tdata.shm = (SDATA*)MapViewOfFile(hMapFile, FILE_MAP_ALL_ACCESS, 0, 0, 0);
     if (tdata.shm == NULL) {
-        _tprintf_s(_T("Erro ao mapear a memÛria partilhada: %d\n"), GetLastError());
+        _tprintf_s(_T("Erro ao mapear a mem√≥ria partilhada: %d\n"), GetLastError());
         CloseHandle(hMapFile);
         return 1;
     }
