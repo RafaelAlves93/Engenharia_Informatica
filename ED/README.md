@@ -2,5 +2,5 @@
 
 ## Nota Projeto: 17.3/20
 
-## Topologia Projeto
+## Topologia Projeto (Ambiente relaizado no GNS3)
 ![ED](Topologia.png)
