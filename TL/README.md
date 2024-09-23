@@ -2,5 +2,5 @@
 
 ## Nota Projeto: 13.3/20
 
-## Topologia Projeto
+## Topologia Projeto (Ambiente realizado no GNS3)
 ![TL](topologia.png)
